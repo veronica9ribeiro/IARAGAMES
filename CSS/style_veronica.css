@@ -1,13 +1,167 @@
+body {
+  background-image: url(images/iara.jpg);
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Fixar o fundo */
+  color: white;
+  overflow-x: hidden;
+}
 
-body{  
-    
-  background-image:url(../images/iara.jpg); 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  background-color: transparent;
+  position: relative;
+}
 
+.nav-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 80px;
+}
 
-  
+.nav-top {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
 
+.nav-left a,
+.nav-left h2 {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 25px;
+}
 
+.nav-left h2 {
+  margin: 0;
+  font-size: 25px;
+  color: #ffffff;
+  text-decoration: none;
+}
 
+.nav-logo .logo {
+  font-size: 37px;
+  font-weight: bold;
+  letter-spacing: 10px;
+  color: white;
+  margin: 0;
+}
 
+/* Botão sanduíche */
+.menu-toggle {
+  cursor: pointer;
+  background-color: #00ff88;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
 
+.menu-toggle:hover {
+  background-color: #00cc70;
+}
+
+/* Parte direita */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+/* Botões de conta */
+.cadastra-se-button,
+.entre-button {
+  background-color: transparent;
+  border: 3px solid #00ff88;
+  color: white;
+  padding: 15px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.cadastra-se-button:hover,
+.entre-button:hover {
+  background-color: #00ff88;
+  color: black;
+}
+
+/* Formulário de pesquisa */
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-form input {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 180px;
+}
+
+.search-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-form i {
+  color: #00ff88;
+  font-size: 18px;
+}
+
+/* Categorias */
+.categories {
+  padding: 50px 30px;
+  font-size: 22px;
+   color: #00ff88;
+}
+
+.categories h3 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: start;
+  font color: white;
+}
+
+.game-card {
+  background-color: transparent; /* Remove a caixinha */
+  padding: 50px;
+  justify-content: center;
+  border-radius: 12px;
+  box-shadow: none;
+  transition: transform 0.3s ease-in-out;
+  width: 180px; /* ou o tamanho ideal para as imagens */
+}
+
+.game-card:hover {
+  transform: scale(1.1);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 17px rgba(0, 255, 136, 0.3); /* sombra verde na imagem */
+  transition: 0.3s ease ease-in-out;
+  margin: 15px;
+text-align: center;
+}
+
+.game-card:hover img {
+  box-shadow: 0 0 18px rgba(0, 255, 136, 0.5);
 }
