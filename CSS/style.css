@@ -15,6 +15,7 @@ body {
   background-attachment: fixed;
   color: white;
   overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* NAVBAR */
@@ -39,15 +40,26 @@ header {
   gap: 30px;
 }
 
-.nav-top a {
+.nav-top a, .categories h4 {
   color: #ffffff;
-  text-decoration: none;
-  font-size: 20px;
-  transition: color 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .nav-top a:hover {
   color: #00ff88;
+
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .menu-toggle {
@@ -136,16 +148,25 @@ header {
 }
 
 /* CATEGORIAS */
-.categories {
-  padding: 30px 40px;
+.categories-spacer {
+  height: 40px; /* Ajuste conforme o espaço que o "CATEGORIAS" ocupava */
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Remova a borda inferior do antigo h3 */
 .categories h3 {
-  font-size: 28px;
-  color: #00ff88;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #00ff88;
-  display: inline-block;
+  display: none;
 }
 
 .categories h4 {
@@ -174,6 +195,10 @@ header {
   border-radius: 4px;
 }
 
+.game-card:focus {
+  box-shadow: 0 0 0 3px #00ff88;
+}
+
 .game-card img {
   width: 180px;
   height: auto;
@@ -194,6 +219,13 @@ header {
     padding: 15px;
     gap: 20px;
   }
+
+  @media (max-width: 480px) {
+    .nav-right {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
   
   .nav-left, .nav-right {
     width: 100%;
@@ -210,21 +242,6 @@ header {
   
   .categories {
     padding: 20px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-top a {
-    font-size: 16px;
-  }
-  
-  .logo {
-    font-size: 24px !important;
-    letter-spacing: 4px !important;
-  }
-  
-  .game-card img {
-    width: 120px;
   }
 }
 
@@ -269,4 +286,16 @@ footer {
   object-fit: cover;
   aspect-ratio: 16/9;
   transition: all 0.3s ease;
+}
+
+a:focus, button:focus, input:focus {
+  outline: 2px solid #00ff88;
+  outline-offset: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
 }
