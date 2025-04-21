@@ -12,44 +12,170 @@ body {
   background-image: url('../images/iara.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: absolute;
   color: white;
   overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 1% 16%;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #111;
+    color: #eee;
+  }
 }
 
-/* NAVBAR */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:focus, button:focus, input:focus {
+  outline: 2px solid #00ff88;
+  outline-offset: 7px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+/* HEADER */
 header {
   display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
   flex-wrap: wrap;
   align-items: flex-start;
-  backdrop-filter: blur(5px);
+  justify-content: space-between;
+  width: 100%;
+  height: 40vh;
+  box-sizing: border-box;
+  position: static;
+}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+  }
 }
 
+/* NAV-LEFT */
 .nav-left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 30px;
+  width: auto;
+}
+@media (max-width: 768px) {
+  .nav-left {
+    width: 100%;
+  }
 }
 
+/* NAV-TOP (dentro de .nav-left) */
 .nav-top {
   display: flex;
   align-items: center;
   gap: 30px;
+  justify-content: space-between;
+  width: 100%;
 }
-
-.nav-top a, .categories h4 {
-  color: #ffffff;
+.nav-top a {
+  color: inherit;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  transition: color 0.3s ease;
 }
-
 .nav-top a:hover {
   color: #00ff88;
-
+}
+.menu-toggle {
+  cursor: pointer;
+  background-color: #00ff88;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+.menu-toggle:hover {
+  background-color: #00cc70;
 }
 
+/* Esconde o menu toggle em telas grandes */
+.menu-toggle {
+  display: none;
+}
+
+/* Mostra o menu toggle e esconde os links em telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-top a {
+    display: none;
+  }
+  .nav-top.open a {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .nav-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+}
+
+/* NAV-LOGO (dentro de .nav-left) */
+.nav-logo .logo {
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: white;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00ff88; }
+  to { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }
+}
+
+/* HEADER-SEARCH-CENTER (dentro de .nav-left) */
+.header-search-center {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-self: self-start;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color:rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+.search-form input {
+  padding: 5px;
+  font-size: 25px;
+  font-weight: 900;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+.search-form input::placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+.search-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.search-form i {
+  color: #00ff88;
+  font-size: 18px;
+}
 .sr-only {
   position: absolute;
   width: 1px;
@@ -62,72 +188,26 @@ header {
   border: 0;
 }
 
-.menu-toggle {
-  cursor: pointer;
-  background-color: #00ff88;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  padding: 8px 12px;
-  color: #000;
-  transition: background-color 0.3s ease;
-}
-
-.menu-toggle:hover {
-  background-color: #00cc70;
-}
-
-.nav-logo .logo {
-  font-size: 34px;
-  font-weight: bold;
-  letter-spacing: 8px;
-  color: white;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #00ff88; }
-  to { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }
-}
-
-/* Lado direito */
+/* NAV-RIGHT (irmão de .nav-left em header) */
 .nav-right {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 20px;
   flex-wrap: wrap;
+  width: auto;
 }
-
-.search-form {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 5px 10px;
+@media (max-width: 480px) {
+  .nav-right {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
-
-.search-form input {
-  padding: 8px;
-  font-size: 15px;
-  border: none;
-  background: transparent;
-  color: white;
-  outline: none;
+@media (max-width: 768px) {
+  .nav-right {
+    width: 100%;
+  }
 }
-
-.search-form button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.search-form i {
-  color: #00ff88;
-  font-size: 18px;
-}
-
-.cadastra-se-button,
+.cadastre-se-button,
 .entre-button {
   background-color: transparent;
   border: 2px solid #00ff88;
@@ -139,163 +219,198 @@ header {
   font-size: 16px;
   transition: all 0.3s ease;
 }
-
-.cadastra-se-button:hover,
+.cadastre-se-button:hover,
 .entre-button:hover {
   background-color: #00ff88;
   color: black;
   transform: scale(1.05);
 }
 
-/* CATEGORIAS */
-.categories-spacer {
-  height: 40px; /* Ajuste conforme o espaço que o "CATEGORIAS" ocupava */
+/* MAIN */
+main {
+  flex: 1 1 auto;
+  height: 65vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  margin-top: 0;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+/* CATEGORIES (dentro de main) */
+.categories {
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
-
-/* Remova a borda inferior do antigo h3 */
+@media (max-width: 768px) {
+  .categories {
+    padding: 20px 15px;
+  }
+}
 .categories h3 {
   display: none;
 }
-
 .categories h4 {
   font-size: 22px;
-  color: #ffffff;
-  margin-top: 60px;
+  color: inherit;
+  margin-top: 30px;
   margin-bottom: 20px;
   text-shadow: 0 0 10px #00ff88;
+  text-align: start;
 }
 
+/* GAME CARDS (dentro de .categories) */
 .game-card {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 20px;
-  padding-bottom: 10px;
+  gap: 30px;
   scroll-behavior: smooth;
+  justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 transparent;
 }
-
 .game-card::-webkit-scrollbar {
   height: 8px;
 }
-
 .game-card::-webkit-scrollbar-thumb {
   background: #00ff88;
   border-radius: 4px;
 }
-
 .game-card:focus {
   box-shadow: 0 0 0 3px #00ff88;
 }
-
 .game-card img {
-  width: 180px;
-  height: auto;
   border-radius: 12px;
+  width: 15%;
+  margin: 2% 0;
   box-shadow: 0 0 15px #00ff8866;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  object-fit: contain;
+  aspect-ratio: 400/560;
+  transition: all 0.3s ease;
 }
-
 .game-card img:hover {
   transform: scale(1.07);
   box-shadow: 0 0 25px #00ff88;
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px;
-    gap: 20px;
-  }
-
-  @media (max-width: 480px) {
-    .nav-right {
-      flex-direction: column;
-      gap: 10px;
-    }
-  }
-  
-  .nav-left, .nav-right {
-    width: 100%;
-  }
-  
-  .nav-top {
-    justify-content: space-between;
-    width: 100%;
-  }
-  
-  .game-card img {
-    width: 150px;
-  }
-  
-  .categories {
-    padding: 20px 15px;
-  }
-}
-
-/* Footer */
-footer {
+/* FOOTER (fora de main) */
+.footer {
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
   text-align: center;
   margin-top: 50px;
   backdrop-filter: blur(5px);
 }
-
 .footer-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
   gap: 15px;
 }
-
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
 .social-icons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
-
 .social-icons a {
   color: #00ff88;
   font-size: 20px;
   transition: transform 0.3s ease;
 }
-
 .social-icons a:hover {
-  transform: translateY(-3px);
+  transform: scale(1.2);
 }
 
-/* Melhorias nos cards */
-.game-card {
-  scrollbar-width: thin;
-  scrollbar-color: #00ff88 transparent;
+/* Estilo para o bloco de categorias do cadastro */
+.categorias-cadastro {
+  border: 2px solid #00ff88;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  background: rgba(0,0,0,0.);
+  min-width: 320px;
+  max-width: 4200px;
+  flex: 2 1 220px;
 }
 
-.game-card img {
-  object-fit: cover;
-  aspect-ratio: 16/9;
-  transition: all 0.3s ease;
+.categorias-cadastro legend {
+  color: #00ff88;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-a:focus, button:focus, input:focus {
-  outline: 2px solid #00ff88;
-  outline-offset: 3px;
+.categorias-cadastro label {
+  display: block;
+  margin: 8px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #111;
-    color: #eee;
-  }
+.categorias-cadastro input[type="checkbox"] {
+  accent-color: #00ff88;
+  margin: 8px;
+
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  ;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #00ff88;
+}
+.form-group input[type="text"],
+
+select {
+  display: lock;
+  width: 15%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #222;
+  color: #fff;
+}
+
+input{
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #222;
+  color: #fff;
+}
+
+/* Personaliza o contorno dos campos ao focar */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0px solid #00ff88;
+  outline-offset: 0;
+  border-color: #00ff88;
+  background: #181f1b;
+}
+
+.form-flex {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.form-flex > div {
+  flex: 1 1 300px;
 }

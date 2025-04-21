@@ -4,42 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iara Games</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+<script src="../JS/menu.js"></script>
 <body>
   <header>
     <div class="nav-left">
       <div class="nav-top">
+        <button class="menu-toggle" aria-label="Menu">&#9776;</button>
         <a href="#inicio">INÍCIO</a>
         <a href="#minhaconta">MINHA CONTA</a>
         <a href="#categorias">CATEGORIAS</a>
-        <button class="menu-toggle" aria-label="Menu">&#9776;</button>
       </div>
       <div class="nav-logo">
         <h1 class="logo">IARA GAMES</h1>
       </div>
+      <div class="header-search-center">
+        <form class="search-form" role="search">
+          <label for="search" class="sr-only">Pesquisar jogos</label>
+          <input id="search" type="text" placeholder="Pesquise o jogo aqui..." />
+          <button type="submit" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
     </div>
 
     <div class="nav-right">
-      <form class="search-form" role="search">
-        <label for="search" class="sr-only">Pesquisar jogos</label>
-        <input id="search" type="text" placeholder="Pesquise o jogo aqui..." />
-        <button type="submit" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
-      </form>
-      <button class="cadastra-se-button" onclick="location.href='#cadastro'">Cadastra-se</button>
+      <a class="cadastre-se-button" href="pages/Cadastro.html">Cadastre-se</a>
       <button class="entre-button" onclick="location.href='#login'">Entre</button>
     </div>
+
+    
+
   </header>
 
   <main>
+
     <section class="categories" id="categorias" aria-label="Categorias de jogos">
       <div class="categories-spacer"></div>
   
-    <div class="game-card" role="region" aria-label="Jogos de aventura" tabindex="0"></div>
+      <div class="game-card" role="region" aria-label="Jogos de aventura" tabindex="0"></div>
 
-    <h4>AVENTURA</h4>
-    <div class="game-card">
+      <h4>AVENTURA</h4>
+      <div class="game-card">
         <img src="images/1.png" alt="Jogo de aventura 1" />
         <img src="images/4.png" alt="Jogo de aventura 2" />
         <img src="images/5.png" alt="Jogo de aventura 3" />
@@ -48,71 +55,68 @@
         <img src="images/23.png" alt="Jogo de aventura 6" />
         <img src="images/34.png" alt="Jogo de aventura 7" />
         <img src="images/42.png" alt="Jogo de aventura 8" />
-    </div>
+      </div>
 
-    <h4>TERROR</h4>
-    <div class="game-card">
-      <img src="images/2.png" alt="Jogo de terror 1" />
-      <img src="images/11.png" alt="Jogo de terror 2" />
-      <img src="images/54.png" alt="Jogo de terror 3" />
-      <img src="images/18.png" alt="Jogo de terror 4" />
-      <img src="images/25.png" alt="Jogo de terror 5" />
-      <img src="images/32.png" alt="Jogo de terror 6" />
-      <img src="images/51.png" alt="Jogo de terror 7" />
-      <img src="images/52.png" alt="Jogo de terror 8" />
-    </div>
+      <h4>TERROR</h4>
+      <div class="game-card">
+        <img src="images/2.png" alt="Jogo de terror 1" />
+        <img src="images/11.png" alt="Jogo de terror 2" />
+        <img src="images/54.png" alt="Jogo de terror 3" />
+        <img src="images/18.png" alt="Jogo de terror 4" />
+        <img src="images/25.png" alt="Jogo de terror 5" />
+        <img src="images/32.png" alt="Jogo de terror 6" />
+        <img src="images/51.png" alt="Jogo de terror 7" />
+        <img src="images/52.png" alt="Jogo de terror 8" />
+      </div>
 
-    <h4>MULTIPLAYER</h4>
-    <div class="game-card">
-      <img src="images/3.png" alt="Jogo multiplayer 1" />
-      <img src="images/6.png" alt="Jogo multiplayer 2" />
-      <img src="images/13.png" alt="Jogo multiplayer 3" />
-      <img src="images/16.png" alt="Jogo multiplayer 4" />
-      <img src="images/33.png" alt="Jogo multiplayer 5" />
-      <img src="images/37.png" alt="Jogo multiplayer 6" />
-      <img src="images/43.png" alt="Jogo multiplayer 7" />
-      <img src="images/45.png" alt="Jogo multiplayer 8" />
-    </div>
+      <h4>MULTIPLAYER</h4>
+      <div class="game-card">
+        <img src="images/3.png" alt="Jogo multiplayer 1" />
+        <img src="images/6.png" alt="Jogo multiplayer 2" />
+        <img src="images/13.png" alt="Jogo multiplayer 3" />
+        <img src="images/16.png" alt="Jogo multiplayer 4" />
+        <img src="images/33.png" alt="Jogo multiplayer 5" />
+        <img src="images/37.png" alt="Jogo multiplayer 6" />
+        <img src="images/43.png" alt="Jogo multiplayer 7" />
+        <img src="images/45.png" alt="Jogo multiplayer 8" />
+      </div>
 
-    <h4>SUSPENSE</h4>
-    <div class="game-card">
-      <img src="images/27.png" alt="Jogo de suspense 1" />
-      <img src="images/30.png" alt="Jogo de suspense 2" />
-      <img src="images/31.png" alt="Jogo de suspense 3" />
-      <img src="images/48.png" alt="Jogo de suspense 4" />
-      <img src="images/49.png" alt="Jogo de suspense 5" />
-      <img src="images/50.png" alt="Jogo de suspense 6" />
-      <img src="images/55.png" alt="Jogo de suspense 7" />
-      <img src="images/47.png" alt="Jogo de suspense 8" />
+      <h4>SUSPENSE</h4>
+      <div class="game-card">
+        <img src="images/27.png" alt="Jogo de suspense 1" />
+        <img src="images/30.png" alt="Jogo de suspense 2" />
+        <img src="images/31.png" alt="Jogo de suspense 3" />
+        <img src="images/48.png" alt="Jogo de suspense 4" />
+        <img src="images/49.png" alt="Jogo de suspense 5" />
+        <img src="images/50.png" alt="Jogo de suspense 6" />
+        <img src="images/55.png" alt="Jogo de suspense 7" />
+        <img src="images/47.png" alt="Jogo de suspense 8" />
+      </div>
 
-    </div>
-
-    <h4>RPG</h4>
-    <div class="game-card">
-      <img src="images/8.png" alt="Jogo RPG 1" />
-      <img src="images/9.png" alt="Jogo RPG 2" />
-      <img src="images/15.png" alt="Jogo RPG 3" />
-      <img src="images/17.png" alt="Jogo RPG 4" />
-      <img src="images/19.png" alt="Jogo RPG 5" />
-      <img src="images/17.png" alt="Jogo RPG 6" />
-      <img src="images/28.png" alt="Jogo RPG 7" />
-      <img src="images/44.png" alt="Jogo RPG 8" />
-    </div>
-  </div>
-  </section>
+      <h4>RPG</h4>
+      <div class="game-card">
+        <img src="images/8.png" alt="Jogo RPG 1" />
+        <img src="images/9.png" alt="Jogo RPG 2" />
+        <img src="images/15.png" alt="Jogo RPG 3" />
+        <img src="images/17.png" alt="Jogo RPG 4" />
+        <img src="images/19.png" alt="Jogo RPG 5" />
+        <img src="images/17.png" alt="Jogo RPG 6" />
+        <img src="images/28.png" alt="Jogo RPG 7" />
+        <img src="images/44.png" alt="Jogo RPG 8" />
+      </div>
+    </section>
   
-  <footer>
-  <div class="footer-content">
-    <p>IARA GAMES &copy; 2025 - Todos os direitos reservados</p>
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-</footer>
+    <footer>
+      <div class="footer-content">
+        <p>IARA GAMES &copy; 2025 - Todos os direitos reservados</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
 
+  </main>
 </body>
-
-
 </html>
