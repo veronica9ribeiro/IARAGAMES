@@ -1,13 +1,46 @@
+/* Resetando margens e paddings padrão do navegador */
+html, body {
+    margin: 0; /* Remove margens padrão do navegador */
+    padding: 0; /* Remove paddings padrão do navegador */
+    height: 100%; /* Garante que o body e o html ocupem toda a altura da janela */
+    overflow: hidden; /* Evita rolagem desnecessária */
+}
 
-body{  
-    
-  background-image:url(../images/iara.jpg); 
+/* Estilização do body */
+body {
+    font-family: "Tektur", sans-serif; /* Define a fonte principal da página */
+    font-optical-sizing: auto; /* Ajusta automaticamente o tamanho óptico da fonte */
+    font-weight: 400; /* Define o peso padrão da fonte */
+    font-style: normal; /* Define o estilo da fonte como normal */
+    font-variation-settings: "wdth" 100; /* Ajusta a largura da fonte para 100% */
+    position: relative; /* Necessário para que o pseudo-elemento (::before) seja posicionado corretamente */
+    z-index: 0; /* Garante que o conteúdo do body fique acima do pseudo-elemento (::before) */
+}
 
+/* Pseudo-elemento ::before para o background */
+body::before {
+    content: ""; /* Cria um pseudo-elemento vazio */
+    position: absolute; /* Permite posicionar o pseudo-elemento em relação ao body */
+    top: 0; /* Alinha o pseudo-elemento ao topo do body */
+    left: 0; /* Alinha o pseudo-elemento à esquerda do body */
+    width: 100%; /* Faz o pseudo-elemento ocupar 100% da largura do body */
+    height: 100%; /* Faz o pseudo-elemento ocupar 100% da altura do body */
+    background-image: url(../images/iarabr.svg); /* Define a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área do pseudo-elemento */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-position: center; /* Centraliza a imagem no pseudo-elemento */
+    background-attachment: scroll; /* O background rola junto com o conteúdo */
+    filter: brightness(0.8) hue-rotate(15deg) ; /* Diminui o brilho da imagem de fundo (50%) *    )
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do body */
+}
 
-  
-
-
-
-
-
+/* Estilização do cabeçalho */
+header {
+    background-color: #f0f0f080; /* Define a cor de fundo do cabeçalho com 75% de opacidade */
+    color: #fff; /* Define a cor do texto do cabeçalho */
+    padding: 1rem; /* Adiciona um espaçamento interno de 1rem em todas as direções */
+    text-align: center; /* Centraliza o conteúdo do cabeçalho */
+    position: fixed; /* Fixa o cabeçalho no topo da janela */
+    width: 100%; /* Faz o cabeçalho ocupar 100% da largura da janela */
+    z-index: 1; /* Coloca o cabeçalho acima do conteúdo do body */
 }
