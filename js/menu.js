@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
         moveButtonsToMenu();
       }
     });
-    // Garante posição correta ao carregar
+
     if (isMobile() && navTop.classList.contains('open')) {
       moveButtonsToMenu();
     } else {
