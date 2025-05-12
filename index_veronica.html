@@ -4,46 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iara Games</title>
+
+  <!-- Chamada da CSS do Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
-  <header>
-    <div class="nav-left">
-      <div class="nav-top">
-        <button class="menu-toggle" aria-label="Menu">&#9776;</button>
-        <a href="#inicio">INÍCIO</a>
-        <a href="#minhaconta">MINHA CONTA</a>
-        <a href="#categorias">CATEGORIAS</a>
-      </div>
-      <div class="nav-logo">
-        <h1 class="logo">IARA GAMES</h1>
-      </div>
-      <div class="header-search-center">
-        <form class="search-form" role="search">
-          <label for="search" class="sr-only">Pesquisar jogos</label>
-          <input id="search" type="text" tabindex="0" placeholder="Pesquise o jogo aqui..." />
-          <button type="submit" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
-        </form>
-      </div>
-    </div>
+  <div class="container">
 
-    <div class="nav-right">
-      <button class="cadastre-se-button" tabindex="-1" onclick="location.href='pages/Cadastro.html'">Cadastre-se</button>
-      <button class="entre-button" tabindex="-1" onclick="location.href='#login'" tabindex="0">Entre</button>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo ocupa metade -->
+    <div class="navbar-brand w-50 d-flex align-items-center">
+      <h1 class="logo m-0">IARA GAMES</h1>
     </div>
+    <!-- Menu e busca ocupam a outra metade -->
+    <div class="collapse navbar-collapse w-50" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#inicio" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Início
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#minhaconta">Minha Conta</a></li>
+            <li><a class="dropdown-item" href="#categorias">Categorias</a></li>
+          </ul>
+        </li>
+      </ul>
+      <button class="navbar-btn" onclick="location.href='pages/Cadastro.html'">Cadastre-se</button>
+      <button class="navbar-btn" onclick="location.href='#login'">Entre</button>
+    </div>
+  </div>
+</nav>
 
-  </header>
+<!-- Novo container para busca -->
+<div class="container my-3">
+  <form class="search-form" role="search" style="max-width: 400px;">
+    <input
+      class="form-control"
+      type="search"
+      placeholder="Pesquise o seu jogo aqui"
+      aria-label="Pesquisar"
+      style="background-color: rgba(0,0,29,0.8); color: #ccc; border: none; font-family: 'Gluten', cursive;"
+    />
+    <button class="btn" type="submit" aria-label="Pesquisar" style="color: #00ff88;">
+      <i class="fas fa-search"></i>
+    </button>
+  </form>
+</div>
 
   <main>
-
     <section class="categories" id="categorias" aria-label="Categorias de jogos">
       <div class="categories-spacer"></div>
-  
-      <div class="game-card" role="region" aria-label="Jogos de aventura" tabindex="0"></div>
 
       <h4>AVENTURA</h4>
-      <div class="game-card">
+      <div class="game-card" role="region" aria-label="Jogos de aventura" tabindex="0">
         <img src="images/1.png" alt="Jogo de aventura Kaze and the Wild Masks" />
         <figcaption><span lang="en">Kaze and the Wild Masks</span></figcaption>
         <img src="images/4.png" alt="Jogo de aventura Chroma Squad" />
@@ -142,13 +158,13 @@
         <div class="social-icons">
           <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
           <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#"aria-label="Instagram><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </footer>
-
   </main>
   <script src="js/menu.js"></script> 
   <script src="js/scrollCenter.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>

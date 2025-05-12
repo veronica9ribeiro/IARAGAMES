@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   height: 100vh;
-  padding: 1% 15%;
+  padding: 1vmin 15vmin;
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -49,24 +49,24 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  height: 40vh;
+  height: 40vmin;
   box-sizing: border-box;
   position: static;
 }
 @media (max-width: 768px) {
   header {
     flex-direction: column;
-    padding: 15px;
-    gap: 20px;
+    padding: 1.5vmin;
+    gap: 2vmin;
   }
 }
 
 /* NAV-LEFT */
 .nav-left {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 30px;
+  gap: clamp(0.5rem, 2vw, 3vmin);
   width: auto;
 }
 @media (max-width: 768px) {
@@ -79,12 +79,11 @@ header {
 .nav-top {
   display: flex;
   align-items: center;
-  gap: 30px;
-  /* justify-content: space-between; */
+  gap: clamp(0.5rem, 2vw, 3vmin);
   width: 100%;
 }
 .nav-top a {
-  font-size: 1.9em;
+  font-size: clamp(1.2rem, 4vw, 5.1vmin);
   color: inherit;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   transition: color 0.3s ease;
@@ -98,7 +97,7 @@ header {
   border-radius: 5px;
   border: none;
   outline: none;
-  padding: 8px 12px;
+  padding: 0.8vmin 1.2vmin;
   color: #ccc;
   transition: background-color 0.3s ease;
   display: none;
@@ -112,11 +111,12 @@ header {
   }
   .nav-top a {
     display: none;
+    
   }
   .nav-top.open a {
     display: block;
     width: 100%;
-    margin: 10px 0;
+    margin: 1vmin 0;
   }
   .nav-top {
     flex-direction: column;
@@ -127,11 +127,12 @@ header {
 
 /* NAV-LOGO */
 .nav-logo .logo {
-  font-size: 4.4em;
+  font-size: clamp(2rem, 8vw, 11.7vmin);
   font-weight: bold;
-  letter-spacing: 8px;
+  letter-spacing: 1vmin;
   color: #ccc;
   animation: glow 2s ease-in-out infinite alternate;
+  font-family: 'Protest Guerrilla', cursive;
 }
 @keyframes glow {
   from { text-shadow: 0 0 10px #00ff88; }
@@ -149,32 +150,22 @@ header {
 .search-form {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background-color: #00010D80;
-  border-radius: 8px;
-  padding: 10px;
+  gap: 0.8vmin;
+  background-color: rgba(0,0,29,0.8);
+  border-radius: 0.8vmin;
+  padding: 1vmin;
+  margin-left: 0; /* Alinha à esquerda */
 }
 .search-form input {
-  padding: 5px;
-  font-size: 25px;
-  font-weight: 900;
-  border: none;
   background: transparent;
-  outline: none;
   color: #ccc;
+  border: none;
+  font-family: 'Gluten', cursive;
 }
 .search-form input::placeholder {
   color: #ccc;
   opacity: 1;
   font-family: 'Gluten', cursive;
-}
-.search-form input:focus {
-  background: #00010D;
-}
-.search-form:focus-within {
-  outline: 2px solid #00ff88;
-  outline-offset: 2px;
-  border-radius: 8px;
 }
 .search-form button {
   background: none;
@@ -183,9 +174,7 @@ header {
 }
 .search-form i {
   color: #00ff88;
-  font-size: 25px;
-  display: flex;
-  align-items: center;
+  font-size: 1.5rem;
 }
 .sr-only {
   position: absolute;
@@ -204,7 +193,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 20px;
+  gap: clamp(0.5rem, 2vw, 3vmin);
   flex-wrap: nowrap;
   width: auto;
   flex-direction: row;
@@ -212,7 +201,7 @@ header {
 @media (max-width: 480px) {
   .nav-right {
     flex-direction: column;
-    gap: 10px;
+    gap: 1vmin;
   }
 }
 @media (max-width: 768px) {
@@ -226,11 +215,11 @@ header {
   background-color: transparent;
   border: 2px solid #00ff88;
   color: #ccc;
-  padding: 10px 8px;
-  border-radius: 8px;
+  font-size: clamp(1rem, 2.5vw, 4vmin);
+  padding: clamp(0.5rem, 1vw, 1.4vmin) clamp(1rem, 2vw, 2vmin);
+  border-radius: clamp(0.3rem, 1vw, 0.8vmin);
   cursor: pointer;
   font-weight: bold;
-  font-size:  1.5em;
   transition: all 0.3s ease;
   text-align: center;
   font-family: 'Patrick Hand SC', cursive;
@@ -239,7 +228,7 @@ header {
 .entre-button:hover {
   background-color: #00ff88;
   color: #00010D;
-  border-radius: 8px;
+  border-radius: 0.8vmin;
   transform: scale(1.05);
   border: 2px solid #00ff88;
 }
@@ -253,23 +242,23 @@ header {
   background-color: transparent;
   border: 2px solid #00ff88;
   color: #ccc;
-  padding: 18px 0;
-  border-radius: 8px;
+  padding: 1.8vmin 0;
+  border-radius: 0.8vmin;
   cursor: pointer;
   font-weight: bold;
-  font-size: 20px;
+  font-size: clamp(1rem, 2.5vw, 3.3vmin);
   transition: all 0.3s ease;
   display: block;
-  min-width: 320px;
-  min-height: 54px;
+  min-width: clamp(8rem, 20vw, 20vmin);
+  min-height: clamp(1.5rem, 4vw, 4vmin);
   text-align: center;
   width: 60%;
-  margin: 32px auto 0 auto;
+  margin: clamp(1rem, 3vw, 3.2vmin) auto 0 auto;
 }
 .cadastro-form .cadastre-se-button:hover {
   background-color: #00ff88;
   color: #00010D;
-  border-radius: 8px;
+  border-radius: 0.8vmin;
   transform: scale(1.05);
   border: 2px solid #00ff88;
 }
@@ -277,7 +266,7 @@ header {
 /* MAIN */
 main {
   flex: 1 1 auto;
-  height: 65vh;
+  height: 65vmin;
   overflow-y: auto;
   scrollbar-width: none;
   margin-top: 0;
@@ -296,11 +285,11 @@ main {
   display: none;
 }
 .categories h4 {
-  font-size: 22px;
+  font-size: clamp(1.2rem, 2.5vw, 3.7vmin);
   color: inherit;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #00ff88;
+  margin-top: clamp(1rem, 2vw, 3vmin);
+  margin-bottom: clamp(0.7rem, 1.5vw, 2vmin);
+  text-shadow: 0 0 clamp(0.3rem, 1vw, 1vmin) #00ff88;
   text-align: start;
 }
 
@@ -309,27 +298,27 @@ main {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 30px;
+  gap: clamp(1rem, 3vw, 3vmin);
   scroll-behavior: smooth;
   justify-content: center;
   scrollbar-width: thin;
   scrollbar-color: #00ff88 transparent;
 }
 .game-card::-webkit-scrollbar {
-  height: 8px;
+  height: 0.8vmin;
 }
 .game-card::-webkit-scrollbar-thumb {
   background: #00ff88;
-  border-radius: 4px;
+  border-radius: 0.4vmin;
 }
 .game-card:focus {
   box-shadow: 0 0 0 3px #00ff88;
 }
 .game-card img {
-  border-radius: 12px;
+  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
   width: 15%;
-  margin: 2% 0;
-  box-shadow: 0 0 15px #00ff8866;
+  margin: clamp(0.7rem, 2vw, 2vmin) 0;
+  box-shadow: 0 0 clamp(0.5rem, 1.5vw, 1.5vmin) #00ff8866;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   object-fit: contain;
@@ -338,15 +327,15 @@ main {
 }
 .game-card img:hover {
   transform: scale(1.07);
-  box-shadow: 0 0 25px #00ff88;
+  box-shadow: 0 0 clamp(1rem, 2vw, 2.5vmin) #00ff88;
 }
 
 /* FOOTER */
 .footer {
   background-color: #00010D;
-  padding: 20px;
+  padding: 2vmin;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 5vmin;
   backdrop-filter: blur(5px);
 }
 .footer-content {
@@ -354,21 +343,21 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 10px 20px;
-  gap: 15px;
+  padding: 1vmin 2vmin;
+  gap: clamp(0.5rem, 2vw, 3vmin);
 }
 .footer-content p {
   margin: 0;
-  font-size: 14px;
+  font-size: clamp(1rem, 2vw, 2vmin);
   color: #ccc;
 }
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: clamp(0.5rem, 2vw, 3vmin);
 }
 .social-icons a {
   color: #00ff88;
-  font-size: 20px;
+  font-size: clamp(1rem, 2vw, 2vmin);
   transition: transform 0.3s ease;
 }
 .social-icons a:hover {
@@ -378,95 +367,95 @@ main {
 /* CATEGORIAS CADASTRO */
 .categorias-cadastro {
   border: 2px solid #00ff88;
-  border-radius: 8px;
-  padding: 16px;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  min-width: 320px;
-  max-width: 4200px;
+  border-radius: 0.8vmin;
+  padding: 1.6vmin;
+  margin-top: 1.8vmin;
+  margin-bottom: 1.8vmin;
+  min-width: 20vmin;
+  max-width: 420vmin;
   flex: 2 1 220px;
 }
 .categorias-cadastro legend {
   color: #00ff88;
   font-weight: bold;
-  font-size: 20px;
+  font-size: clamp(1.2rem, 3vw, 3.3vmin);
 }
 .categorias-cadastro label {
   display: block;
-  margin: 8px;
+  margin: 0.8vmin;
   cursor: pointer;
-  font-size: 16px;
+  font-size: clamp(1rem, 2vw, 2vmin);
 }
 .categorias-cadastro input[type="checkbox"] {
   accent-color: #00ff88;
-  margin: 8px;
+  margin: 0.8vmin;
 }
 
 /* PREFERENCIAS CADASTRO */
 .preferencias-cadastro {
   border: 2px solid #00ff88;
-  border-radius: 8px;
-  padding: 16px;
-  margin-top: 18px;
-  margin-bottom: 18px;
-  min-width: 220px;
+  border-radius: 0.8vmin;
+  padding: 1.6vmin;
+  margin-top: 1.8vmin;
+  margin-bottom: 1.8vmin;
+  min-width: 12vmin;
   flex: 1 1 220px;
 }
 .preferencias-cadastro legend {
   color: #ccc;
   font-weight: bold;
-  font-size: 20px;
+  font-size: clamp(1.2rem, 3vw, 3.3vmin);
 }
 .preferencias-cadastro label {
   display: block;
-  margin: 8px 0;
+  margin: 0.8vmin 0;
   cursor: pointer;
-  font-size: 16px;
+  font-size: clamp(1rem, 2vw, 2vmin);
 }
 .preferencias-cadastro input[type="checkbox"] {
   accent-color: #00ff88;
-  margin-right: 8px;
+  margin-right: 0.8vmin;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin-top: 1.8vmin;
+  margin-bottom: 1.8vmin;
 }
 .form-group label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-bottom: 0.8vmin;
+  font-size: clamp(1rem, 2vw, 2vmin);
   color: #ccc;
 }
 .form-group input[type="text"],
 select {
   width: 15%;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 0.8vmin;
+  border-radius: 0.6vmin;
   border: 1px solid #ccc;
-  margin-bottom: 10px;
+  margin-bottom: 1vmin;
   background: #00010D;
   color: #ccc;
 }
 input {
-  padding: 8px;
-  border-radius: 6px;
+  padding: 0.8vmin;
+  border-radius: 0.6vmin;
   border: 1px solid #ccc;
   background: #00010D;
   color: #ccc;
 }
 #nome, #usuario {
   width: 100%;
-  min-width: 220px;
-  max-width: 400px;
+  min-width: 14vmin;
+  max-width: 27vmin;
   border: 1px solid #ccc;
-  border-radius: 6px;
+  border-radius: 0.6vmin;
   background: #00010D;
   color: #ccc;
-  padding: 8px;
-  font-size: 1em;
+  padding: 0.8vmin;
+  font-size: 2vmin;
 }
 #nome:focus, #usuario:focus {
   border-color: #00ff88;
@@ -475,9 +464,9 @@ input {
   color: #ccc;
 }
 #idade {
-  width: 80px;
-  min-width: 60px;
-  max-width: 120px;
+  width: 5vmin;
+  min-width: 4vmin;
+  max-width: 8vmin;
 }
 input:focus,
 select:focus,
@@ -489,7 +478,7 @@ textarea:focus {
 }
 .form-flex {
   display: flex;
-  gap: 32px;
+  gap: clamp(0.5rem, 2vw, 3vmin);
   align-items: stretch;
   flex-wrap: wrap;
 }
@@ -500,7 +489,7 @@ textarea:focus {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
-  min-width: 260px;
+  min-width: 17vmin;
   height: 100%;
 }
 .preferencias-cadastro,
@@ -517,27 +506,97 @@ textarea:focus {
 @media (max-width: 900px) {
   .form-flex {
     flex-direction: column;
-    gap: 18px;
+    gap: 1.8vmin;
   }
   .cadastre-se-button {
-    font-size: 1.1em;
-    padding: 14px 0;
+    font-size: 2vmin;
+    padding: 1.4vmin 0;
   }
 }
 
 h1 {
   font-family: 'Protest Guerrilla', cursive;
   color: #ccc;
+  font-size: clamp(2rem, 8vw, 11.7vmin);
 }
 h2 {
   font-family: 'Gluten', cursive;
   color: #ccc;
+  font-size: clamp(1.5rem, 5vw, 5vmin);
 }
 h3 {
   font-family: 'Bungee Inline', cursive;
   color: #ccc;
+  font-size: clamp(1.2rem, 3vw, 3.5vmin);
 }
 p {
   font-family: 'Patrick Hand SC', cursive;
   color: #ccc;
+  font-size: clamp(1rem, 2vw, 2.5vmin);
+}
+
+/* Navbar transparente */
+.navbar.bg-body-tertiary {
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+
+/* Textos brancos na navbar */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand,
+.navbar .btn,
+.navbar .form-control,
+.navbar .form-control::placeholder {
+  color: #fff !important;
+}
+
+/* Input da navbar com fundo escuro translúcido */
+.navbar .form-control {
+  background-color: rgba(0, 0, 29, 0.8) !important;
+  color: #ccc;
+  border: none;
+}
+
+/* Placeholder visível */
+.navbar .form-control::placeholder {
+  color: #ccc !important;
+  opacity: 1;
+  font-family: 'Gluten', cursive; /* ou a fonte que preferir */
+}
+
+/* Botão Cadastre-se: verde com texto escuro */
+.navbar .btn-primary {m, 8vw, 11.7vmin);
+  background-color: #00ff88 !important;
+  color: #00010D !important;
+  border: none;
+  font-family: 'Patrick Hand SC', cursive;alternate;
+  font-weight: bold;est Guerrilla', cursive;
+  transition: background 0.3s, color 0.3s;
+}
+@keyframes glow {
+/* Botão Entre: fundo escuro, texto verde */
+.navbar .btn-secondary {20px #00ff88, 0 0 30px #00ff88; }
+  background-color: #00010D !important;  color: #00ff88 !important;  border: 2px solid #00ff88 !important;  font-family: 'Patrick Hand SC', cursive;  font-weight: bold;  transition: background 0.3s, color 0.3s;}/* Hover igual para ambos */.navbar .btn-primary:hover,.navbar .btn-secondary:hover {  background-color: #00cc70 !important;  color: #fff !important;}.logo {  font-size: clamp(2rem, 8vw, 11.7vmin);  font-weight: bold;  letter-spacing: 1vmin;  color: #ccc;  animation: glow 2s ease-in-out infinite alternate;  font-family: 'Protest Guerrilla', cursive;}@keyframes glow {  from { text-shadow: 0 0 10px #00ff88; }  to { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }}
+
+.navbar .navbar-btn {
+  background-color: #00ff88;
+  color: #00010D;
+  border: 2px solid #00ff88;
+  font-family: 'Patrick Hand SC', cursive;
+  font-weight: bold;
+  border-radius: 0.8vmin;
+  padding: 0.7em 1.5em;
+  margin-left: 1.2vmin;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.navbar .navbar-btn:hover,
+.navbar .navbar-btn:focus {
+  background-color: #00010D;
+  color: #00ff88;
+  transform: scale(1.05);
+  outline: none;
 }
