@@ -1,5 +1,8 @@
 /* Reset e Fonte */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 
 * {
   margin: 0;
@@ -8,11 +11,11 @@
 }
 
 body {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Patrick Hand SC', cursive;
   background-image: url('../images/background.png');
   background-size: cover;
   background-position: top;
-  color: white;
+  color: #ccc;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -22,8 +25,8 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #111;
-    color: #eee;
+    background-color: #00010D;
+    color: #ccc;
   }
 }
 
@@ -95,7 +98,7 @@ header {
   border: none;
   outline: none;
   padding: 8px 12px;
-  color: #000;
+  color: #ccc;
   transition: background-color 0.3s ease;
   display: none;
 }
@@ -126,7 +129,7 @@ header {
   font-size: 34px;
   font-weight: bold;
   letter-spacing: 8px;
-  color: white;
+  color: #ccc;
   animation: glow 2s ease-in-out infinite alternate;
 }
 @keyframes glow {
@@ -146,7 +149,7 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color:rgba(0, 0, 0, 0.5);
+  background-color: #00010D80;
   border-radius: 8px;
   padding: 10px;
 }
@@ -157,13 +160,14 @@ header {
   border: none;
   background: transparent;
   outline: none;
+  color: #ccc;
 }
 .search-form input::placeholder {
-  color: #ffffff;
+  color: #ccc;
   opacity: 1;
 }
 .search-form input:focus {
-  background: #181f1b;
+  background: #00010D;
 }
 .search-form:focus-within {
   outline: 2px solid #00ff88;
@@ -219,7 +223,7 @@ header {
 .entre-button {
   background-color: transparent;
   border: 2px solid #00ff88;
-  color: white;
+  color: #ccc;
   padding: 10px 8px;
   border-radius: 8px;
   cursor: pointer;
@@ -227,11 +231,12 @@ header {
   font-size: 16px;
   transition: all 0.3s ease;
   text-align: center;
+  font-family: 'Patrick Hand SC', cursive;
 }
 .cadastre-se-button:hover,
 .entre-button:hover {
   background-color: #00ff88;
-  color: black;
+  color: #00010D;
   border-radius: 8px;
   transform: scale(1.05);
   border: 2px solid #00ff88;
@@ -245,7 +250,7 @@ header {
 .cadastro-form .cadastre-se-button {
   background-color: transparent;
   border: 2px solid #00ff88;
-  color: white;
+  color: #ccc;
   padding: 18px 0;
   border-radius: 8px;
   cursor: pointer;
@@ -261,7 +266,7 @@ header {
 }
 .cadastro-form .cadastre-se-button:hover {
   background-color: #00ff88;
-  color: black;
+  color: #00010D;
   border-radius: 8px;
   transform: scale(1.05);
   border: 2px solid #00ff88;
@@ -336,7 +341,7 @@ main {
 
 /* FOOTER */
 .footer {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #00010D;
   padding: 20px;
   text-align: center;
   margin-top: 50px;
@@ -353,6 +358,7 @@ main {
 .footer-content p {
   margin: 0;
   font-size: 14px;
+  color: #ccc;
 }
 .social-icons {
   display: flex;
@@ -405,7 +411,7 @@ main {
   flex: 1 1 220px;
 }
 .preferencias-cadastro legend {
-  color: #fff;
+  color: #ccc;
   font-weight: bold;
   font-size: 20px;
 }
@@ -430,7 +436,7 @@ main {
   display: block;
   margin-bottom: 8px;
   font-size: 16px;
-  color: #fff;
+  color: #ccc;
 }
 .form-group input[type="text"],
 select {
@@ -439,15 +445,15 @@ select {
   border-radius: 6px;
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  background: #222;
-  color: #fff;
+  background: #00010D;
+  color: #ccc;
 }
 input {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  background: #222;
-  color: #fff;
+  background: #00010D;
+  color: #ccc;
 }
 #nome, #usuario {
   width: 100%;
@@ -455,15 +461,16 @@ input {
   max-width: 400px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  background: #222;
-  color: #fff;
+  background: #00010D;
+  color: #ccc;
   padding: 8px;
   font-size: 1em;
 }
 #nome:focus, #usuario:focus {
   border-color: #00ff88;
-  background: #181f1b;
+  background: #00010D;
   outline: none;
+  color: #ccc;
 }
 #idade {
   width: 80px;
@@ -474,8 +481,9 @@ input:focus,
 select:focus,
 textarea:focus {
   border-color: #00ff88;
-  background: #181f1b;
+  background: #00010D;
   outline: none;
+  color: #ccc;
 }
 .form-flex {
   display: flex;
@@ -513,4 +521,21 @@ textarea:focus {
     font-size: 1.1em;
     padding: 14px 0;
   }
+}
+
+h1 {
+  font-family: 'Protest Guerrilla', cursive;
+  color: #ccc;
+}
+h2 {
+  font-family: 'Gluten', cursive;
+  color: #ccc;
+}
+h3 {
+  font-family: 'Bungee Inline', cursive;
+  color: #ccc;
+}
+p {
+  font-family: 'Patrick Hand SC', cursive;
+  color: #ccc;
 }
