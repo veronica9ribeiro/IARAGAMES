@@ -15,18 +15,23 @@
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid d-flex justify-content-between align-items-center">
-    <!-- Logo ocupa metade -->
-    <div class="navbar-brand w-50 d-flex align-items-center">
+    <!-- Logo -->
+    <div class="navbar-brand d-flex align-items-center">
       <h1 class="logo m-0">IARA GAMES</h1>
     </div>
-    <!-- Menu e busca ocupam a outra metade -->
-    <div class="collapse navbar-collapse w-50" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <!-- Botão sanduíche padrão Bootstrap -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Menu, busca e botões -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#inicio" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Início
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#minhaconta">Minha Conta</a></li>
             <li><a class="dropdown-item" href="#categorias">Categorias</a></li>
           </ul>
