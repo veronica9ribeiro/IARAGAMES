@@ -16,12 +16,7 @@ body {
   background-size: cover;
   background-position: top;
   color: #ccc;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  height: 100vh;
-  padding: 1vmin 15vmin;
+  /* Removido overflow: hidden para permitir que os cards do carrossel possam crescer para fora do container ao aplicar scale */
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -126,8 +121,8 @@ header {
 }
 
 /* NAV-LOGO */
-.nav-logo .logo {
-  font-size: clamp(2rem, 8vw, 11.7vmin);
+.logo {
+  font-size: clamp(2rem, 6vw, 8vmin); /* ajuste aqui para o tamanho desejado */
   font-weight: bold;
   letter-spacing: 1vmin;
   color: #ccc;
@@ -144,8 +139,7 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: start;
-  align-self: self-starcentert;
+  justify-content: flex-start;
 }
 .search-form {
   display: flex;
@@ -303,6 +297,7 @@ main {
   justify-content: center;
   scrollbar-width: thin;
   scrollbar-color: #00ff88 transparent;
+  overflow: visible !important;
 }
 .game-card::-webkit-scrollbar {
   height: 0.8vmin;
@@ -314,20 +309,92 @@ main {
 .game-card:focus {
   box-shadow: 0 0 0 3px #00ff88;
 }
-.game-card img {
+
+/* Adiciona borda verde e efeito de escala nos cards do carrossel */
+.game-card .card,
+.categories .carousel-inner .carousel-item .d-flex > .card {
+  background: rgba(0,0,29,0.8);
+  /* Removido z-index para evitar stacking context desnecessário */
+  position: static;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important; /* Garante que a imagem possa sair do card */
+}
+.game-card .card img,
+.categories .carousel-inner .carousel-item .d-flex > .card img {
+  border: 2px solid #00ff88;
   border-radius: clamp(0.5rem, 1vw, 1.2vmin);
-  width: 15%;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: 0;
+  box-shadow: 0 0 10px 0 #00ff88 !important;
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, border-color 0.3s, z-index 0.3s;
+  cursor: pointer;
+  object-fit: contain;
+  aspect-ratio: 400/560;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.game-card .card img:hover,
+.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
+  transform: scale(1.2) !important;
+  border-color: #00ff88 !important;
+  z-index: 20 !important;
+  position: relative;
+  box-shadow: 0 0 20px 4px #00ff88 !important;
+}
+
+.game-card img,
+.categories .carousel-inner .carousel-item .d-flex > .card img {
+  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
+  width: 100%; /* Preenche toda a largura do card */
+  max-width: 160px; /* Limita o tamanho para não estourar o card */
+  height: auto;
   margin: clamp(0.7rem, 2vw, 2vmin) 0;
   box-shadow: 0 0 clamp(0.5rem, 1.5vw, 1.5vmin) #00ff8866;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   object-fit: contain;
   aspect-ratio: 400/560;
-  transition: all 0.3s ease;
+  display: block;
 }
-.game-card img:hover {
+.game-card img:hover,
+.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
   transform: scale(1.07);
   box-shadow: 0 0 clamp(1rem, 2vw, 2.5vmin) #00ff88;
+}
+
+.game-card .card-body,
+.categories .carousel-inner .carousel-item .d-flex > .card .card-body {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 0.2rem 0.7rem 0.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-title-custom {
+  margin: 0;
+  padding: 0.2em 0 0 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #ccc !important;
+  font-family: 'Gluten', cursive;
+  text-align: center;
+  text-shadow: 0 0 8px #00ff88;
+  border: none !important;
+  background: none !important;
+}
+.card-title {
+  border: none !important;
+  background: none !important;
 }
 
 /* FOOTER */
@@ -517,7 +584,7 @@ textarea:focus {
 h1 {
   font-family: 'Protest Guerrilla', cursive;
   color: #ccc;
-  font-size: clamp(2rem, 8vw, 11.7vmin);
+  font-size: clamp(1.8rem, 7.2vw, 10.5vmin);
 }
 h2 {
   font-family: 'Gluten', cursive;
@@ -565,20 +632,7 @@ p {
   font-family: 'Gluten', cursive; /* ou a fonte que preferir */
 }
 
-/* Botão Cadastre-se: verde com texto escuro */
-.navbar .btn-primary {m, 8vw, 11.7vmin);
-  background-color: #00ff88 !important;
-  color: #00010D !important;
-  border: none;
-  font-family: 'Patrick Hand SC', cursive;alternate;
-  font-weight: bold;est Guerrilla', cursive;
-  transition: background 0.3s, color 0.3s;
-}
-@keyframes glow {
-/* Botão Entre: fundo escuro, texto verde */
-.navbar .btn-secondary {20px #00ff88, 0 0 30px #00ff88; }
-  background-color: #00010D !important;  color: #00ff88 !important;  border: 2px solid #00ff88 !important;  font-family: 'Patrick Hand SC', cursive;  font-weight: bold;  transition: background 0.3s, color 0.3s;}/* Hover igual para ambos */.navbar .btn-primary:hover,.navbar .btn-secondary:hover {  background-color: #00cc70 !important;  color: #fff !important;}.logo {  font-size: clamp(2rem, 8vw, 11.7vmin);  font-weight: bold;  letter-spacing: 1vmin;  color: #ccc;  animation: glow 2s ease-in-out infinite alternate;  font-family: 'Protest Guerrilla', cursive;}@keyframes glow {  from { text-shadow: 0 0 10px #00ff88; }  to { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }}
-
+/* Botões customizados da navbar */
 .navbar .navbar-btn {
   background-color: #00ff88;
   color: #00010D;
@@ -626,4 +680,94 @@ p {
 /* Altera a cor da borda do botão sanduíche para verde */
 .navbar-toggler {
   border-color: #00ff88 !important;
+}
+
+/* Títulos dos cards do carrossel */
+.card .card-title,
+.card .card-body .card-title,
+.card .game-title-custom {
+  color: #ccc !important;
+  font-family: 'Gluten', cursive;
+  text-align: center;
+  text-shadow: 0 0 8px #00ff88;
+  border: none !important;
+  background: none !important;
+}
+
+/* Ajusta altura do container da navbar para ocupar menos espaço vertical */
+.container.navbar-container {
+  min-height: 15vh !important;
+  max-height: 20vh;
+  padding-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  position: relative;
+  z-index: 1050;
+  overflow: visible !important;
+}
+@media (max-width: 768px) {
+  .container.navbar-container {
+    min-height: 12vh;
+    max-height: 18vh;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    z-index: 1050;
+  }
+}
+
+/* Garante que o menu colapsado do Bootstrap fique acima de tudo */
+.navbar-collapse.show {
+  z-index: 1100 !important;
+  position: relative;
+}
+
+.container.busca-intermediaria {
+  min-height: 15vh;
+  max-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .container.busca-intermediaria {
+    min-height: 12vh;
+    max-height: 18vh;
+  }
+}
+
+.container.categorias-container {
+  min-height: 60vh !important;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .container.categorias-container {
+    min-height: 70vh !important;
+  }
+}
+
+/* GAME CARDS - Corrige para funcionar com Bootstrap e carrossel */
+.categories .carousel-inner .carousel-item .d-flex {
+  overflow: visible !important;
+}
+.categories .carousel-inner,
+.categories .carousel-inner .carousel-item,
+.categories .carousel-inner .carousel-item .d-flex {
+  overflow: visible !important;
 }
