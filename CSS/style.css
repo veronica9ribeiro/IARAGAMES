@@ -716,8 +716,8 @@ p {
 }
 @media (max-width: 768px) {
   .container.busca-intermediaria {
-    min-height: 12vh;
-    max-height: 18vh;
+    min-height: 25vh;
+    justify-content: flex-end;
   }
 }
 
