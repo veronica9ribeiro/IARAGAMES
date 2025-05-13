@@ -3,92 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iara Games - Nova Página</title>
+  <title>Iara Games - Cadastro</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link rel="stylesheet" href="../CSS/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
-<script src="../JS/menu.js"></script>
 <body>
-  <header>
-    <div class="nav-left">
-      <div class="nav-top">
-        <button class="menu-toggle" aria-label="Menu">&#9776;</button>
-        <a href="../index_veronica.html">INÍCIO</a>
-        <a href="#minhaconta">MINHA CONTA</a>
-        <a href="#categorias">CATEGORIAS</a>
-      </div>
-      <div class="nav-logo">
-        <h1 class="logo">IARA GAMES</h1>
-      </div>
-      <div class="header-search-center">
-        <form class="search-form" role="search">
-          <label for="search" class="sr-only">Pesquisar jogos</label>
-          <input id="search" type="text" placeholder="Pesquise o jogo aqui..." />
-          <button type="submit" aria-label="Pesquisar"><i class="fas fa-search"></i></button>
-        </form>
-      </div>
-    </div>
-    <div class="nav-right">
-      <a class="cadastre-se-button" href="Cadastro.html">Cadastre-se</a>
-      <button class="entre-button" onclick="location.href='#login'">Entre</button>
-    </div>
-  </header>
-
-  <main>    
+  <!-- Container principal igual ao index -->
+  <div class="container categorias-container">
+    <main>
       <section class="cadastro-section">
         <h2>Crie sua conta</h2>
         <form id="cadastroForm" class="cadastro-form">
-          <div class="form-flex">
-            <div class="dados-pessoais-wrapper">
-              <div class="form-group">
-                <label for="nome">Nome completo</label>
-                <input type="text" id="nome" name="nome" required />
-                <label for="idade">Idade</label>
-                <input type="number" id="idade" name="idade" min="10" max="120" required />
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required />
-                <label for="usuario">Nome de usuário</label>
-                <input type="text" id="usuario" name="usuario" required />
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" name="senha" required minlength="6" />
-                <label for="confirmarSenha">Confirmar senha</label>
-                <input type="password" id="confirmarSenha" name="confirmarSenha" required minlength="6" />
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="mb-3">
+                <label for="nome" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" id="nome" name="nome" required />
+              </div>
+              <div class="mb-3">
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade" name="idade" min="10" max="120" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" required />
+              </div>
+              <div class="mb-3">
+                <label for="usuario" class="form-label">Nome de usuário</label>
+                <input type="text" class="form-control" id="usuario" name="usuario" required />
+              </div>
+              <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" name="senha" required minlength="6" />
+              </div>
+              <div class="mb-3">
+                <label for="confirmarSenha" class="form-label">Confirmar senha</label>
+                <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" required minlength="6" />
               </div>
             </div>
-            <div class="plataformas-wrapper">
-              <fieldset class="preferencias-cadastro">
+            <div class="col-md-4">
+              <fieldset class="preferencias-cadastro mb-3">
                 <legend>Plataformas favoritas</legend>
-                <label><input type="checkbox" name="plataformas" value="PC" /> PC</label>
-                <label><input type="checkbox" name="plataformas" value="PlayStation" /> PlayStation</label>
-                <label><input type="checkbox" name="plataformas" value="Xbox" /> Xbox</label>
-                <label><input type="checkbox" name="plataformas" value="Nintendo" /> Nintendo</label>
-                <label><input type="checkbox" name="plataformas" value="Mobile" /> Mobile</label>
-                <label><input type="checkbox" name="plataformas" value="Outro" /> Outro</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="plataformas" value="PC" id="plataformaPC" />
+                  <label class="form-check-label" for="plataformaPC">PC</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="plataformas" value="PlayStation" id="plataformaPlayStation" />
+                  <label class="form-check-label" for="plataformaPlayStation">PlayStation</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="plataformas" value="Xbox" id="plataformaXbox" />
+                  <label class="form-check-label" for="plataformaXbox">Xbox</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="plataformas" value="Nintendo" id="plataformaNintendo" />
+                  <label class="form-check-label" for="plataformaNintendo">Nintendo</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="plataformas" value="Mobile" id="plataformaMobile" />
+                  <label class="form-check-label" for="plataformaMobile">Mobile</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="plataformas" value="Outro" id="plataformaOutro" />
+                  <label class="form-check-label" for="plataformaOutro">Outro</label>
+                </div>
               </fieldset>
             </div>
-            <div class="categorias-wrapper">
-              <fieldset class="preferencias-cadastro">
+            <div class="col-md-4">
+              <fieldset class="preferencias-cadastro mb-3">
                 <legend>Categorias favoritas</legend>
-                <label><input type="checkbox" name="categorias" value="Aventura" /> Aventura</label>
-                <label><input type="checkbox" name="categorias" value="Terror" /> Terror</label>
-                <label><input type="checkbox" name="categorias" value="RPG" /> RPG</label>
-                <label><input type="checkbox" name="categorias" value="Esporte" /> Esporte</label>
-                <label><input type="checkbox" name="categorias" value="Corrida" /> Corrida</label>
-                <label><input type="checkbox" name="categorias" value="Estratégia" /> Estratégia</label>
-                <label><input type="checkbox" name="categorias" value="Simulação" /> Simulação</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="Aventura" id="catAventura" />
+                  <label class="form-check-label" for="catAventura">Aventura</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="Terror" id="catTerror" />
+                  <label class="form-check-label" for="catTerror">Terror</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="RPG" id="catRPG" />
+                  <label class="form-check-label" for="catRPG">RPG</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="Esporte" id="catEsporte" />
+                  <label class="form-check-label" for="catEsporte">Esporte</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="Corrida" id="catCorrida" />
+                  <label class="form-check-label" for="catCorrida">Corrida</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="Estratégia" id="catEstrategia" />
+                  <label class="form-check-label" for="catEstrategia">Estratégia</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="categorias" value="Simulação" id="catSimulacao" />
+                  <label class="form-check-label" for="catSimulacao">Simulação</label>
+                </div>
               </fieldset>
             </div>
           </div>
-          <button type="submit" class="cadastre-se-button">Cadastrar</button>
+          <div class="row mt-4">
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+            </div>
+          </div>
         </form>
         <div id="cadastroMensagem"></div>
       </section>
     </main>
-    
-    <script src="../JS/menu.js"></script>
-    <script src="../JS/cadastro.js"></script>
-  </main>
-
+  </div>
   <footer>
     <div class="footer-content">
       <p>IARA GAMES &copy; 2025 - Todos os direitos reservados</p>
@@ -99,5 +125,8 @@
       </div>
     </div>
   </footer>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
