@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // HTML da barra de busca (igual ao index_veronica.html)
   const buscaHTML = `
-  <div class="container busca-intermediaria align-items-center ps-3">
+  <div class="container busca-intermediaria ps-3">
     <form class="search-form" role="search" style="max-width: 400px; margin-left: 0;">
       <input
         class="form-control"

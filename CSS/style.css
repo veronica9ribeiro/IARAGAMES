@@ -706,7 +706,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Alinha à esquerda em telas grandes */
   width: 100%;
   margin: 0 auto 0 auto;
   padding: 0;
@@ -718,6 +718,7 @@ p {
   .container.busca-intermediaria {
     min-height: 25vh;
     justify-content: flex-end;
+    align-items: center !important; /* Centraliza apenas em telas pequenas */
   }
 }
 
