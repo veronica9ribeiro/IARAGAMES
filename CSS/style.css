@@ -238,7 +238,7 @@ header {
   justify-content: center;
   width: 100%;
 }
-.cadastro-form .cadastre-se-button {
+.cadastro-form .cadastre-se-button, .cadastro-form .btn-success.btn-lg {
   background-color: transparent;
   border: 2px solid #00ff88;
   color: #ccc;
@@ -255,7 +255,7 @@ header {
   width: 60%;
   margin: clamp(1rem, 3vw, 3.2vmin) auto 0 auto;
 }
-.cadastro-form .cadastre-se-button:hover {
+.cadastro-form .cadastre-se-button:hover, .cadastro-form .btn-success.btn-lg:hover {
   background-color: #00ff88;
   color: #00010D;
   border-radius: 0.8vmin;
