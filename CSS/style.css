@@ -1,181 +1,443 @@
-/* Reset e Fonte */
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100vh !important;
-  overflow-x: hidden !important;
-  overflow-y: hidden !important;
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  height: 100%;
 }
 
 body {
-  font-family: 'Patrick Hand SC', cursive;
-  background-image: url('../images/background.png');
-  background-size: cover;
-  background-position: top;
+  background: url('../images/background.png') top/cover;
   color: #ccc;
-  /* Removido overflow: hidden para permitir que os cards do carrossel possam crescer para fora do container ao aplicar scale */
-}
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #00010D;
-    color: #ccc;
-  }
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-a:focus, button:focus, input:focus {
-  border-color: #00ff88;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 4px;
-  margin-right: 6px;
-}
-
-/* HEADER */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+nav.navbar.bg-body-tertiary {
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+
+nav .navbar-nav .nav-link,
+nav .navbar-brand,
+nav .btn,
+nav .form-control,
+nav .form-control::placeholder {
+  color: #fff !important;
+}
+
+nav .form-control {
+  background: rgba(0, 0, 29, 0.8) !important;
+  border: none;
+}
+
+nav .form-control::placeholder {
+  font-family: 'Gluten', cursive;
+  opacity: 1;
+}
+
+nav .navbar-btn {
+  background: #00ff88;
+  color: #00010D;
+  border: 2px solid #00ff88;
+  font: bold 2.0rem 'Patrick Hand SC', cursive;
+  border-radius: 0.8vmin;
+  padding: 0.7em 1.5em;
+  margin-left: 1.2vmin;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+nav .navbar-btn:hover,
+nav .navbar-btn:focus {
+  background: #00010D;
+  color: #00ff88;
+  transform: scale(1.05);
+}
+
+nav .custom-dropdown {
+  background: rgba(0, 0, 29, 0.8) !important;
+  border: none;
+}
+
+nav .dropdown-item {
+  color: #fff !important;
+  background: transparent !important;
+}
+
+nav .dropdown-item:hover,
+nav .dropdown-item:focus {
+  background: #00ff88 !important;
+  color: #00010D !important;
+}
+
+nav .navbar-toggler {
+  border-color: #00ff88 !important;
+}
+
+nav .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2300ff88' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+nav .button-base {
+  background: transparent;
+  border: 2px solid #00ff88;
+  color: #ccc;
+  font: bold clamp(1rem, 2.5vw, 4vmin) 'Patrick Hand SC', cursive;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 0.8vmin;
+  padding: clamp(0.5rem, 1vw, 1.4vmin) clamp(1rem, 2vw, 2vmin);
+}
+
+nav .button-base:hover {
+  background: #00ff88;
+  color: #00010D;
+  transform: scale(1.05);
+}
+
+nav .game-card {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: clamp(1rem, 3vw, 3vmin);
+  scroll-behavior: smooth;
+  justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 transparent;
+}
+
+nav .game-card::-webkit-scrollbar {
+  height: 0.8vmin;
+}
+
+nav .game-card::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 0.4vmin;
+}
+
+nav .game-card:focus {
+  box-shadow: 0 0 0 3px #00ff88;
+}
+
+nav .game-card .card {
+  background: rgba(0, 0, 29, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+nav .game-card .card img {
+  border: 2px solid #00ff88;
+  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
   width: 100%;
-  height: 40vmin;
-  box-sizing: border-box;
-  position: static;
-}
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 1.5vmin;
-    gap: 2vmin;
-  }
+  max-width: 160px;
+  height: auto;
+  margin: clamp(0.7rem, 2vw, 2vmin) 0;
+  box-shadow: 0 0 clamp(0.5rem, 1.5vw, 1.5vmin) #00ff8866;
+  transition: all 0.3s cubic-bezier(.4, 2, .6, 1);
+  cursor: pointer;
+  object-fit: contain;
+  aspect-ratio: 400/560;
+  position: relative;
+  z-index: 1;
 }
 
-/* NAV-LEFT */
-.nav-left {
+nav .game-card .card img:hover {
+  transform: scale(1.1);
+  border-color: #00ff88;
+  box-shadow: 0 0 20px 4px #00ff88;
+  z-index: 20;
+}
+
+.game-title-custom {
+  margin: 0;
+  padding: 0.2em 0 0;
+  font: clamp(1rem, 2vw, 1.2rem) 'Gluten', cursive;
+  color: #ccc;
+  text-align: center;
+  text-shadow: 0 0 8px #00ff88;
+}
+
+.footer {
+  background-color: #00010D;
+  padding: 2vmin;
+  text-align: center;
+  margin-top: 5vmin;
+  backdrop-filter: blur(5px);
+}
+
+.footer-content {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1vmin 2vmin;
   gap: clamp(0.5rem, 2vw, 3vmin);
-  width: auto;
-}
-@media (max-width: 768px) {
-  .nav-left {
-    width: 100%;
-  }
 }
 
-/* NAV-TOP */
+.footer-content p {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 2vmin);
+  color: #ccc;
+}
+
+.social-icons {
+  display: flex;
+  gap: clamp(0.5rem, 2vw, 3vmin);
+}
+
+.social-icons a {
+  color: #00ff88;
+  font-size: clamp(1rem, 2vw, 2vmin);
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+h1,
+h2,
+h3,
+p {
+  color: #ccc;
+}
+
+h1 {
+  font: clamp(1.8rem, 7.2vw, 10.5vmin) 'Protest Guerrilla', cursive;
+}
+
+h2 {
+  font: clamp(1.5rem, 5vw, 5vmin) 'Gluten', cursive;
+}
+
+h3 {
+  font: clamp(1.2rem, 3vw, 3.5vmin) 'Bungee Inline', cursive;
+}
+
+p {
+  font: clamp(1rem, 2vw, 2.5vmin) 'Patrick Hand SC', cursive;
+}
+
+main {
+  flex: 1 1 auto;
+  height: 65vmin;
+  overflow-y: auto;
+  margin-top: 0;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 transparent;
+}
+
+main::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.categories {
+  padding: 0;
+}
+
+.categories h3 {
+  display: none;
+}
+
+.categories h4 {
+  font-size: clamp(1.2rem, 2.5vw, 3.7vmin);
+  color: inherit;
+  margin: clamp(1rem, 2vw, 3vmin) 0 clamp(0.7rem, 1.5vw, 2vmin);
+  text-shadow: 0 0 clamp(0.3rem, 1vw, 1vmin) #00ff88;
+  text-align: start;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 1.8vmin 0;
+}
+
+.form-group label {
+  margin-bottom: 0.8vmin;
+  font-size: clamp(1rem, 2vw, 2vmin);
+  color: #ccc;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #00ff88;
+  background: #00010D;
+  outline: none;
+  color: #ccc;
+}
+
+input.form-control,
+select.form-control,
+textarea.form-control {
+  background-color: rgba(0, 0, 29, 0.7) !important;
+  color: #ccc !important;
+  border: 1px solid #222 !important;
+}
+
+input.form-control::placeholder,
+textarea.form-control::placeholder {
+  color: #ccc !important;
+  opacity: 1;
+}
+
+.box-cadastro {
+  border: 2px solid #00ff88;
+  border-radius: 0.8vmin;
+  padding: 1.6vmin;
+  margin: 1.8vmin 0;
+  min-width: 12vmin;
+  flex: 1 1 220px;
+}
+
+.categorias-cadastro {
+  max-width: 420vmin;
+  flex: 2 1 220px;
+}
+
+.box-cadastro legend {
+  font-weight: bold;
+  font-size: clamp(1.2rem, 3vw, 3.3vmin);
+}
+
+.categorias-cadastro legend {
+  color: #00ff88;
+}
+
+.preferencias-cadastro legend {
+  color: #ccc;
+}
+
+.box-cadastro label {
+  display: block;
+  margin: 0.8vmin 0;
+  cursor: pointer;
+  font-size: clamp(1rem, 2vw, 2vmin);
+}
+
+.box-cadastro input[type="checkbox"] {
+  accent-color: #00ff88;
+  margin-right: 0.8vmin;
+}
+
+.form-flex {
+  display: flex;
+  gap: clamp(0.5rem, 2vw, 3vmin);
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.dados-pessoais-wrapper,
+.plataformas-wrapper,
+.categorias-wrapper {
+  flex: 1 1 300px;
+  min-width: 17vmin;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-left,
 .nav-top {
   display: flex;
-  align-items: center;
   gap: clamp(0.5rem, 2vw, 3vmin);
+}
+
+.nav-left {
+  align-items: flex-start;
+}
+
+.nav-top {
+  align-items: center;
   width: 100%;
 }
+
 .nav-top a {
   font-size: clamp(1.2rem, 4vw, 5.1vmin);
   color: inherit;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   transition: color 0.3s ease;
 }
+
 .nav-top a:hover {
   color: #00ff88;
 }
-.menu-toggle {
-  cursor: pointer;
-  background-color: #00ff88;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  padding: 0.8vmin 1.2vmin;
-  color: #ccc;
-  transition: background-color 0.3s ease;
-  display: none;
-}
-.menu-toggle:hover {
-  background-color: #00cc70;
-}
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .nav-top a {
-    display: none;
-    
-  }
-  .nav-top.open a {
-    display: block;
-    width: 100%;
-    margin: 1vmin 0;
-  }
-  .nav-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-  }
-}
 
-/* NAV-LOGO */
-.logo {
-  font-size: clamp(2rem, 6vw, 8vmin); /* ajuste aqui para o tamanho desejado */
-  font-weight: bold;
-  letter-spacing: 1vmin;
-  color: #ccc;
-  animation: glow 2s ease-in-out infinite alternate;
-  font-family: 'Protest Guerrilla', cursive;
-}
-@keyframes glow {
-  from { text-shadow: 0 0 10px #00ff88; }
-  to { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }
-}
-
-/* HEADER-SEARCH-CENTER */
-.header-search-center {
+.header-search-center,
+.nav-right {
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.header-search-center {
   justify-content: flex-start;
 }
+
+.nav-right {
+  justify-content: flex-end;
+  gap: clamp(0.5rem, 2vw, 3vmin);
+  flex-wrap: nowrap;
+}
+
 .search-form {
   display: flex;
   align-items: center;
   gap: 0.8vmin;
-  background-color: rgba(0,0,29,0.8);
+  background: rgba(0, 0, 29, 0.8);
   border-radius: 0.8vmin;
   padding: 1vmin;
-  margin-left: 0; /* Alinha à esquerda */
 }
+
 .search-form input {
   background: transparent;
   color: #ccc;
   border: none;
   font-family: 'Gluten', cursive;
 }
+
 .search-form input::placeholder {
   color: #ccc;
   opacity: 1;
-  font-family: 'Gluten', cursive;
 }
+
 .search-form button {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 .search-form i {
   color: #00ff88;
   font-size: 1.5rem;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -188,585 +450,135 @@ header {
   border: 0;
 }
 
-/* NAV-RIGHT */
-.nav-right {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(0.5rem, 2vw, 3vmin);
-  flex-wrap: nowrap;
-  width: auto;
-  flex-direction: row;
-}
-@media (max-width: 480px) {
-  .nav-right {
-    flex-direction: column;
-    gap: 1vmin;
-  }
-}
-@media (max-width: 768px) {
-  .nav-right {
-    width: 100%;
-  }
-}
-
-.cadastre-se-button,
-.entre-button {
-  background-color: transparent;
-  border: 2px solid #00ff88;
-  color: #ccc;
-  font-size: clamp(1rem, 2.5vw, 4vmin);
-  padding: clamp(0.5rem, 1vw, 1.4vmin) clamp(1rem, 2vw, 2vmin);
-  border-radius: clamp(0.3rem, 1vw, 0.8vmin);
-  cursor: pointer;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-family: 'Patrick Hand SC', cursive;
-}
-.cadastre-se-button:hover,
-.entre-button:hover {
-  background-color: #00ff88;
-  color: #00010D;
-  border-radius: 0.8vmin;
-  transform: scale(1.05);
-  border: 2px solid #00ff88;
-}
-
-.cadastro-btn-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-.cadastro-form .cadastre-se-button, .cadastro-form .btn-success.btn-lg {
-  background-color: transparent;
-  border: 2px solid #00ff88;
-  color: #ccc;
-  padding: 1.8vmin 0;
-  border-radius: 0.8vmin;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: clamp(1rem, 2.5vw, 3.3vmin);
-  transition: all 0.3s ease;
-  display: block;
-  min-width: clamp(8rem, 20vw, 20vmin);
-  min-height: clamp(1.5rem, 4vw, 4vmin);
-  text-align: center;
-  width: 60%;
-  margin: clamp(1rem, 3vw, 3.2vmin) auto 0 auto;
-}
-.cadastro-form .cadastre-se-button:hover, .cadastro-form .btn-success.btn-lg:hover {
-  background-color: #00ff88;
-  color: #00010D;
-  border-radius: 0.8vmin;
-  transform: scale(1.05);
-  border: 2px solid #00ff88;
-}
-
-/* MAIN */
-main {
-  flex: 1 1 auto;
-  height: 65vmin;
-  overflow-y: auto;
-  scrollbar-width: none;
-  margin-top: 0;
-}
-
-/* CATEGORIES */
-.categories {
-  padding: 0;
-}
-@media (max-width: 768px) {
-  .categories {
-    padding: 20px 15px;
-  }
-}
-.categories h3 {
-  display: none;
-}
-.categories h4 {
-  font-size: clamp(1.2rem, 2.5vw, 3.7vmin);
-  color: inherit;
-  margin-top: clamp(1rem, 2vw, 3vmin);
-  margin-bottom: clamp(0.7rem, 1.5vw, 2vmin);
-  text-shadow: 0 0 clamp(0.3rem, 1vw, 1vmin) #00ff88;
-  text-align: start;
-}
-
-/* GAME CARDS */
-.game-card {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: clamp(1rem, 3vw, 3vmin);
-  scroll-behavior: smooth;
-  justify-content: center;
-  scrollbar-width: thin;
-  scrollbar-color: #00ff88 transparent;
+.categories .carousel-inner,
+.carousel-item,
+.carousel-item .d-flex {
   overflow: visible !important;
 }
-.game-card::-webkit-scrollbar {
-  height: 0.8vmin;
-}
-.game-card::-webkit-scrollbar-thumb {
-  background: #00ff88;
-  border-radius: 0.4vmin;
-}
-.game-card:focus {
-  box-shadow: 0 0 0 3px #00ff88;
-}
 
-/* Adiciona borda verde e efeito de escala nos cards do carrossel */
-.game-card .card,
-.categories .carousel-inner .carousel-item .d-flex > .card {
-  background: rgba(0,0,29,0.8);
-  /* Removido z-index para evitar stacking context desnecessário */
-  position: static;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  border: none !important;
-  box-shadow: none !important;
-  overflow: visible !important; /* Garante que a imagem possa sair do card */
-}
-.game-card .card img,
-.categories .carousel-inner .carousel-item .d-flex > .card img {
-  border: 2px solid #00ff88;
-  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
-  width: 100%;
-  max-width: 160px;
-  height: auto;
-  margin: 0;
-  box-shadow: 0 0 10px 0 #00ff88 !important;
-  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, border-color 0.3s, z-index 0.3s;
-  cursor: pointer;
-  object-fit: contain;
-  aspect-ratio: 400/560;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-.game-card .card img:hover,
-.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
-  transform: scale(1.2) !important;
-  border-color: #00ff88 !important;
-  z-index: 20 !important;
-  position: relative;
-  box-shadow: 0 0 20px 4px #00ff88 !important;
-}
-
-.game-card img,
-.categories .carousel-inner .carousel-item .d-flex > .card img {
-  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
-  width: 100%; /* Preenche toda a largura do card */
-  max-width: 160px; /* Limita o tamanho para não estourar o card */
-  height: auto;
-  margin: clamp(0.7rem, 2vw, 2vmin) 0;
-  box-shadow: 0 0 clamp(0.5rem, 1.5vw, 1.5vmin) #00ff8866;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  object-fit: contain;
-  aspect-ratio: 400/560;
-  display: block;
-}
-.game-card img:hover,
-.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 clamp(1rem, 2vw, 2.5vmin) #00ff88;
-}
-
-.game-card .card-body,
-.categories .carousel-inner .carousel-item .d-flex > .card .card-body {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0.5rem 0.2rem 0.7rem 0.2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.game-title-custom {
-  margin: 0;
-  padding: 0.2em 0 0 0;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: #ccc !important;
-  font-family: 'Gluten', cursive;
-  text-align: center;
-  text-shadow: 0 0 8px #00ff88;
-  border: none !important;
-  background: none !important;
-}
-.card-title {
-  border: none !important;
-  background: none !important;
-}
-
-/* FOOTER */
-.footer {
-  background-color: #00010D;
-  padding: 2vmin;
-  text-align: center;
-  margin-top: 5vmin;
-  backdrop-filter: blur(5px);
-}
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 1vmin 2vmin;
-  gap: clamp(0.5rem, 2vw, 3vmin);
-}
-.footer-content p {
-  margin: 0;
-  font-size: clamp(1rem, 2vw, 2vmin);
-  color: #ccc;
-}
-.social-icons {
-  display: flex;
-  gap: clamp(0.5rem, 2vw, 3vmin);
-}
-.social-icons a {
-  color: #00ff88;
-  font-size: clamp(1rem, 2vw, 2vmin);
-  transition: transform 0.3s ease;
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-}
-
-/* CATEGORIAS CADASTRO */
-.categorias-cadastro {
-  border: 2px solid #00ff88;
-  border-radius: 0.8vmin;
-  padding: 1.6vmin;
-  margin-top: 1.8vmin;
-  margin-bottom: 1.8vmin;
-  min-width: 20vmin;
-  max-width: 420vmin;
-  flex: 2 1 220px;
-}
-.categorias-cadastro legend {
-  color: #00ff88;
-  font-weight: bold;
-  font-size: clamp(1.2rem, 3vw, 3.3vmin);
-}
-.categorias-cadastro label {
-  display: block;
-  margin: 0.8vmin;
-  cursor: pointer;
-  font-size: clamp(1rem, 2vw, 2vmin);
-}
-.categorias-cadastro input[type="checkbox"] {
-  accent-color: #00ff88;
-  margin: 0.8vmin;
-}
-
-/* PREFERENCIAS CADASTRO */
-.preferencias-cadastro {
-  border: 2px solid #00ff88;
-  border-radius: 0.8vmin;
-  padding: 1.6vmin;
-  margin-top: 1.8vmin;
-  margin-bottom: 1.8vmin;
-  min-width: 12vmin;
-  flex: 1 1 220px;
-}
-.preferencias-cadastro legend {
-  color: #ccc;
-  font-weight: bold;
-  font-size: clamp(1.2rem, 3vw, 3.3vmin);
-}
-.preferencias-cadastro label {
-  display: block;
-  margin: 0.8vmin 0;
-  cursor: pointer;
-  font-size: clamp(1rem, 2vw, 2vmin);
-}
-.preferencias-cadastro input[type="checkbox"] {
-  accent-color: #00ff88;
-  margin-right: 0.8vmin;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1.8vmin;
-  margin-bottom: 1.8vmin;
-}
-.form-group label {
-  display: block;
-  margin-bottom: 0.8vmin;
-  font-size: clamp(1rem, 2vw, 2vmin);
-  color: #ccc;
-}
-input:focus,
-select:focus,
-textarea:focus {
-  border-color: #00ff88;
-  background: #00010D;
-  outline: none;
-  color: #ccc;
-}
-input.form-control, select.form-control, textarea.form-control {
-  background-color: rgba(0, 0, 29, 0.7) !important;
-  color: #ccc !important;
-  border: 1px solid #222 !important;
-}
-input.form-control::placeholder, textarea.form-control::placeholder {
-  color: #ccc !important;
-  opacity: 1;
-}
-.form-flex {
-  display: flex;
-  gap: clamp(0.5rem, 2vw, 3vmin);
-  align-items: stretch;
-  flex-wrap: wrap;
-}
-.dados-pessoais-wrapper,
-.plataformas-wrapper,
-.categorias-wrapper {
-  flex: 1 1 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  min-width: 17vmin;
-  height: 100%;
-}
-.preferencias-cadastro,
-.dados-pessoais-wrapper .form-group {
-  height: 100%;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.cadastro-form {
-  width: 100%;
-}
-@media (max-width: 900px) {
-  .form-flex {
-    flex-direction: column;
-    gap: 1.8vmin;
-  }
-  .cadastre-se-button {
-    font-size: 2vmin;
-    padding: 1.4vmin 0;
-  }
-}
-
-h1 {
-  font-family: 'Protest Guerrilla', cursive;
-  color: #ccc;
-  font-size: clamp(1.8rem, 7.2vw, 10.5vmin);
-}
-h2 {
-  font-family: 'Gluten', cursive;
-  color: #ccc;
-  font-size: clamp(1.5rem, 5vw, 5vmin);
-}
-h3 {
-  font-family: 'Bungee Inline', cursive;
-  color: #ccc;
-  font-size: clamp(1.2rem, 3vw, 3.5vmin);
-}
-p {
-  font-family: 'Patrick Hand SC', cursive;
-  color: #ccc;
-  font-size: clamp(1rem, 2vw, 2.5vmin);
-}
-
-/* Navbar transparente */
-.navbar.bg-body-tertiary {
-  background-color: transparent !important;
-  border: none;
-  box-shadow: none;
-}
-
-/* Textos brancos na navbar */
-.navbar .navbar-nav .nav-link,
-.navbar .navbar-brand,
-.navbar .btn,
-.navbar .form-control,
-.navbar .form-control::placeholder {
-  color: #fff !important;
-}
-
-/* Input da navbar com fundo escuro translúcido */
-.navbar .form-control {
-  background-color: rgba(0, 0, 29, 0.8) !important;
-  color: #ccc;
-  border: none;
-}
-
-/* Placeholder visível */
-.navbar .form-control::placeholder {
-  color: #ccc !important;
-  opacity: 1;
-  font-family: 'Gluten', cursive; /* ou a fonte que preferir */
-}
-
-/* Botões customizados da navbar */
-.navbar .navbar-btn {
-  background-color: #00ff88;
-  color: #00010D;
-  border: 2px solid #00ff88;
-  font-family: 'Patrick Hand SC', cursive;
-  font-weight: bold;
-  border-radius: 0.8vmin;
-  padding: 0.7em 1.5em;
-  margin-left: 1.2vmin;
-  transition: background 0.3s, color 0.3s, transform 0.2s;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.navbar .navbar-btn:hover,
-.navbar .navbar-btn:focus {
-  background-color: #00010D;
-  color: #00ff88;
-  transform: scale(1.05);
-  outline: none;
-}
-
-/* Custom Dropdown */
-.custom-dropdown {
-  background: rgba(0,0,29,0.8) !important; /* fundo escuro translúcido */
-  border: none;
-}
-
-.custom-dropdown .dropdown-item {
-  color: #fff !important; /* texto branco */
-  background: transparent !important;
-}
-
-.custom-dropdown .dropdown-item:hover,
-.custom-dropdown .dropdown-item:focus {
-  background: #00ff88 !important;
-  color: #00010D !important;
-}
-
-/* Altera a cor do ícone do toggle do Bootstrap para verde */
-.navbar-toggler .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2300ff88' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Altera a cor da borda do botão sanduíche para verde */
-.navbar-toggler {
-  border-color: #00ff88 !important;
-}
-
-/* Títulos dos cards do carrossel */
-.card .card-title,
-.card .card-body .card-title,
-.card .game-title-custom {
-  color: #ccc !important;
-  font-family: 'Gluten', cursive;
-  text-align: center;
-  text-shadow: 0 0 8px #00ff88;
-  border: none !important;
-  background: none !important;
-}
-
-/* Ajusta altura do container da navbar para ocupar menos espaço vertical */
-.container.navbar-container {
-  min-height: 15vh !important;
-  max-height: 20vh;
-  padding-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-  position: relative;
-  z-index: 1050;
-  overflow: visible !important;
-}
-@media (max-width: 768px) {
-  .container.navbar-container {
-    min-height: 12vh;
-    max-height: 18vh;
-    padding-top: 1.2rem;
-    padding-bottom: 1.2rem;
-    z-index: 1050;
-  }
-}
-
-/* Garante que o menu colapsado do Bootstrap fique acima de tudo */
 .navbar-collapse.show {
   z-index: 1100 !important;
   position: relative;
 }
 
-.container.busca-intermediaria {
-  min-height: 15vh;
-  max-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Alinha à esquerda em telas grandes */
+.card .card-title,
+.card-body .card-title,
+.game-title-custom {
+  color: #ccc !important;
+  font-family: 'Gluten', cursive;
+  text-align: center;
+  text-shadow: 0 0 8px #00ff88;
+  background: none !important;
+  border: none !important;
+}
+
+
+.secao-destaque,
+.featured-section,
+.carousel-inner {
+  background: rgba(0, 0, 29, 0.85) !important;
+  border-radius: 1.2vmin;
+  box-shadow: 0 4px 32px #0008;
+}
+
+/* Headings in Featured Section */
+.secao-destaque h2,
+.featured-section h2,
+.carousel-inner h2,
+.carousel-inner .section-title {
+  color: #00ff88 !important;
+  text-shadow: 0 2px 8px #000, 0 0 12px #00ff88;
+}
+
+/* "Ver todos" link */
+.view-all,
+.ver-todos,
+a.view-all,
+a.ver-todos {
+  font-size: 2.0rem;
+  /* diminui o tamanho da fonte */
+  color: #fff !important;
+  /* deixa a fonte branca */
+  font-weight: 500;
+  text-shadow: none;
+}
+
+
+.highlights {
+  background: rgba(0, 0, 29, 0.85) !important;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px #0008;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.highlights h2 {
+  color: #ffffff !important;
+  font-family: 'Gluten', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  text-shadow: 0 2px 8px #000, 0 0 12px #00ff88;
+  transition: color 0.2s;
+}
+
+.highlights h2:hover {
+  color: #00ff88 !important;
+  text-decoration: underline;
+}
+
+.highlights .card.game-card {
+  background: rgba(19, 19, 19, 0.08);
+  border: 3px solid #2b8a5e;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+}
+
+.highlights .card.game-card:hover {
+  transform: scale(7.03);
+  box-shadow: 0 4px 24px #00ff8844;
+}
+
+/* Título do jogo */
+.highlights .card-title {
+  color: #ffffff !important;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 4px #fff, 0 0 2px #00ff88;
+  margin-bottom: 0.5rem;
+}
+
+/* Categoria e nota */
+.highlights .badge,
+.highlights .text-muted {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Botões */
+.highlights .btn {
+  font-size: 1.0rem;
+  padding: 0.3rem 2.0rem;
+}
+
+.highlights .card-img-top {
+  border-radius: 0.7rem 0.7rem 0 0;
   width: 100%;
-  margin: 0 auto 0 auto;
-  padding: 0;
-  overflow: visible !important;
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  .container.busca-intermediaria {
-    min-height: 25vh;
-    justify-content: flex-end;
-    align-items: center !important; /* Centraliza apenas em telas pequenas */
-  }
+  max-width: 160px;
+  aspect-ratio: 400/560;
+  height: auto;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
 }
 
-.container.categorias-container {
-  min-height: 50vh !important;
-  max-height: none;
-  overflow-y: visible;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  .container.categorias-container {
-    min-height: 70vh !important;
-    max-height: none;
-  }
+.btn.btn-sm {
+  font-size: 1.3rem;
+  padding: 0.6rem 2.2rem;
+  border-radius: 0.7rem;
 }
 
-.container.categorias-container {
-  /* Altura dinâmica: 100vh menos navbar, busca e footer */
-  height: calc(100vh - 15vh - 20vh - 10vh);
-  min-height: 0;
-  max-height: none;
-  overflow-y: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  .container.categorias-container {
-    height: calc(100vh - 12vh - 18vh - 12vh);
-  }
-}
-
-/* GAME CARDS - Corrige para funcionar com Bootstrap e carrossel */
-.categories .carousel-inner .carousel-item .d-flex {
-  overflow: visible !important;
-}
-.categories .carousel-inner,
-.categories .carousel-inner .carousel-item,
-.categories .carousel-inner .carousel-item .d-flex {
-  overflow: visible !important;
+.carousel-item .card {
+  margin-left: 8.5rem;
+  margin-right:8.5rem;
 }

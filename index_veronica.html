@@ -1,407 +1,700 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Iara Games</title>
 
-  <!-- Chamada da CSS do Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="IARA GAMES - A maior plataforma de jogos brasileira com centenas de títulos gratuitos e premium. Jogos de Aventura, RPG, Terror, Multiplayer e mais.">
+  <meta name="keywords" content="jogos online, jogos brasileiros, RPG, aventura, terror, multiplayer, IARA GAMES">
+  <meta name="author" content="IARA GAMES">
+  <meta property="og:title" content="IARA GAMES - Plataforma de Jogos Brasileira">
+  <meta property="og:description" content="Jogue os melhores jogos nacionais e internacionais em uma só plataforma.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.iaragames.com">
+  <meta property="og:image" content="https://www.iaragames.com/images/og-image.jpg">
+  <title>IARA GAMES | Plataforma de Jogos Online | Jogue Agora</title>
+  <p class="lead">Explore mundos épicos e viva aventuras inesquecíveis</p>
+
+  <!-- Preload para fontes e CSS crítico -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
+  <link rel="preload" href="CSS/style.css" as="style">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- CSS Customizado -->
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
+  </div>
+  </div>
+  </div>
+  </header>
   <!-- Container 3: TODAS AS CATEGORIAS DE JOGOS -->
-  <div class="container categorias-container">
+  <div class="container categorias-container py-5">
     <main>
       <section class="categories" id="categorias" aria-label="Categorias de jogos">
         <div class="categories-spacer"></div>
 
+
+
+        <!-- Seção AVENTURA -->
         <section id="aventura">
-          <h4>AVENTURA</h4>
-          <div id="carouselAventura" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/1.png" class="card-img-top game-img-custom" alt="Kaze and the Wild Masks">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Kaze and the Wild Masks</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/4.png" class="card-img-top game-img-custom" alt="Chroma Squad">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Chroma Squad</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/5.png" class="card-img-top game-img-custom" alt="Dandara Trials">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Dandara Trials</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/10.png" class="card-img-top game-img-custom" alt="Mark of the Deep">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Mark of the Deep</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/21.png" class="card-img-top game-img-custom" alt="No Place Bravery">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">No Place Bravery</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/23.png" class="card-img-top game-img-custom" alt="Árida Backland's Awakening">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Árida Backland's Awakening</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/34.png" class="card-img-top game-img-custom" alt="Blazing Chrome">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Blazing Chrome</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/42.png" class="card-img-top game-img-custom" alt="Racoo Venture">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Racoo Venture</p>
-                    </div>
-                  </div>
-                </div>
+  <h4 class="category-title">
+    <i class="fas fa-gamepad me-2"></i> AVENTURA
+    <a href="#" class="float-end view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+  </h4>
+  <div id="carouselAventura" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- Remova game-card do container -->
+        <div class="d-flex justify-content-center" style="overflow:visible;">
+          <div class="card bg-transparent border-0 mx-2 game-card" style="width: 180px;">
+            <div class="card-img-wrapper">
+              <img src="images/1.png" class="card-img-top game-img-custom" alt="Kaze and the Wild Masks" loading="lazy">
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAventura" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselAventura" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Kaze and the Wild Masks</p>
+              <div class="d-flex justify-content-between">
+                <span class="badge bg-warning text-dark">4.7 ★</span>
+              </div>
+            </div>
           </div>
-        </section>
+          <div class="card bg-transparent border-0 mx-2 game-card" style="width: 180px;">
+            <div class="card-img-wrapper">
+              <img src="images/4.png" class="card-img-top game-img-custom" alt="Chroma Squad" loading="lazy">
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Chroma Squad</p>
+              <div class="d-flex justify-content-between">
+                <span class="badge bg-warning text-dark">4.5 ★</span>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2 game-card" style="width: 180px;">
+            <div class="card-img-wrapper">
+              <img src="images/5.png" class="card-img-top game-img-custom" alt="Dandara Trials" loading="lazy">
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Dandara Trials</p>
+              <div class="d-flex justify-content-between">
+                <span class="badge bg-warning text-dark">4.9 ★</span>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2 game-card" style="width: 180px;">
+            <div class="card-img-wrapper">
+              <img src="images/7.png" class="card-img-top game-img-custom" alt="Blazing Chrome" loading="lazy">
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Blazing Chrome</p>
+              <div class="d-flex justify-content-between">
+                <span class="badge bg-warning text-dark">4.8 ★</span>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2 game-card" style="width: 180px;">
+            <div class="card-img-wrapper">
+              <img src="images/8.png" class="card-img-top game-img-custom" alt="Celeste" loading="lazy">
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Celeste</p>
+              <div class="d-flex justify-content-between">
+                <span class="badge bg-warning text-dark">4.9 ★</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Adicione mais slides se desejar -->
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAventura" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselAventura" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
+  </div>
+</section>
 
+        <!-- Seção TERROR -->
         <section id="terror">
-          <h4>TERROR</h4>
+          <h4 class="category-title">
+            <i class="fas fa-ghost me-2"></i> TERROR
+            <a href="#" class="float-end view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+          </h4>
           <div id="carouselTerror" class="carousel slide mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
+              <!-- Slide 1 -->
               <div class="carousel-item active">
                 <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/2.png" class="card-img-top game-img-custom" alt="Fobia">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Fobia</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/11.png" class="card-img-top game-img-custom" alt="Haunted Manor">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Haunted Manor</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/54.png" class="card-img-top game-img-custom" alt="Host 71">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Host 71</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/18.png" class="card-img-top game-img-custom" alt="Forest of Perdition the School Trip">
+                    <img src="images/18.png" class="card-img-top game-img-custom"
+                      alt="Forest of Perdition the School Trip">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Forest of Perdition the School Trip</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/25.png" class="card-img-top game-img-custom" alt="Devil Inside Us">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Devil Inside Us</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/32.png" class="card-img-top game-img-custom" alt="Teleforum">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Teleforum</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- Slide 2 -->
               <div class="carousel-item">
                 <div class="d-flex justify-content-center game-card" style="overflow:visible;">
+                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+                    <img src="images/32.png" class="card-img-top game-img-custom" alt="Teleforum">
+                    <div class="card-body p-2">
+                      <p class="card-title text-center game-title-custom">Teleforum</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
+                    </div>
+                  </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/51.png" class="card-img-top game-img-custom" alt="Immortal Mantis">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Immortal Mantis</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/52.png" class="card-img-top game-img-custom" alt="Phil Alone">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Phil Alone</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+                    <img src="images/53.png" class="card-img-top game-img-custom" alt="The Last Door">
+                    <div class="card-body p-2">
+                      <p class="card-title text-center game-title-custom">The Last Door</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+                    <img src="images/56.png" class="card-img-top game-img-custom" alt="Darkestville Castle">
+                    <div class="card-body p-2">
+                      <p class="card-title text-center game-title-custom">Darkestville Castle</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                       <div class="d-flex justify-content-between">
+                        <span class="badge bg-warning text-dark">4.9 ★</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Controles do carrossel -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselTerror" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselTerror" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Próximo</span>
             </button>
           </div>
         </section>
 
+        <!-- Seção MULTIPLAYER -->
         <section id="multiplayer">
-          <h4>MULTIPLAYER</h4>
+          <h4 class="category-title">
+            <i class="fas fa-users me-2"></i> MULTIPLAYER
+            <a href="#" class="float-end view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+          </h4>
           <div id="carouselMultiplayer" class="carousel slide mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
+              <!-- Slide 1 -->
               <div class="carousel-item active">
                 <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/3.png" class="card-img-top game-img-custom" alt="Horizon Chase Turbo">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Horizon Chase Turbo</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/6.png" class="card-img-top game-img-custom" alt="Sniper Ghost Warrior Contracts 2">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Sniper Ghost Warrior Contracts 2</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/13.png" class="card-img-top game-img-custom" alt="Menger Shoig Warar">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Menger Shoig Warar</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/16.png" class="card-img-top game-img-custom" alt="Toren">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Toren</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/33.png" class="card-img-top game-img-custom" alt="Relic Hunters Legend">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Relic Hunters Legend</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/37.png" class="card-img-top game-img-custom" alt="Knights of Pen and Paper 2">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Knights of Pen and Paper 2</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              <!-- Slide 2 -->
               <div class="carousel-item">
                 <div class="d-flex justify-content-center game-card" style="overflow:visible;">
+                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+                    <img src="images/37.png" class="card-img-top game-img-custom" alt="Knights of Pen and Paper 2">
+                    <div class="card-body p-2">
+                      <p class="card-title text-center game-title-custom">Knights of Pen and Paper 2</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                    </div>
+                  </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/43.png" class="card-img-top game-img-custom" alt="Pocket Bravery">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Pocket Bravery</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/45.png" class="card-img-top game-img-custom" alt="One Beat Min">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">One Beat Min</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+                    <img src="images/46.png" class="card-img-top game-img-custom" alt="Battle Bros">
+                    <div class="card-body p-2">
+                      <p class="card-title text-center game-title-custom">Battle Bros</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+                    <img src="images/47.png" class="card-img-top game-img-custom" alt="Super Multiplayer">
+                    <div class="card-body p-2">
+                      <p class="card-title text-center game-title-custom">Super Multiplayer</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMultiplayer" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
+            <!-- Controles do carrossel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMultiplayer"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselMultiplayer" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselMultiplayer"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Próximo</span>
             </button>
           </div>
         </section>
 
+        <!-- Seção SUSPENSE -->
         <section id="suspense">
-          <h4>SUSPENSE</h4>
+          <h4 class="category-title">
+            <i class="fas fa-question me-2"></i> SUSPENSE
+            <a href="#" class="float-end view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+          </h4>
           <div id="carouselSuspense" class="carousel slide mb-5" data-bs-ride="carousel">
             <div class="carousel-inner">
+              <!-- Slide 1 -->
               <div class="carousel-item active">
                 <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/27.png" class="card-img-top game-img-custom" alt="Taxidermy">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Taxidermy</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/30.png" class="card-img-top game-img-custom" alt="Neve">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Neve</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/31.png" class="card-img-top game-img-custom" alt="Jogo Satanista Para Praticar o Mal">
+                    <img src="images/31.png" class="card-img-top game-img-custom"
+                      alt="Jogo Satanista Para Praticar o Mal">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Jogo Satanista Para Praticar o Mal</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/48.png" class="card-img-top game-img-custom" alt="I Did Not Buy This Ticket">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">I Did Not Buy This Ticket</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/49.png" class="card-img-top game-img-custom" alt="Asleep">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Asleep</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/50.png" class="card-img-top game-img-custom" alt="Surrealidade">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Surrealidade</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
                   <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
                     <img src="images/55.png" class="card-img-top game-img-custom" alt="Lunar Axé">
                     <div class="card-body p-2">
                       <p class="card-title text-center game-title-custom">Lunar Axé</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/47.png" class="card-img-top game-img-custom" alt="Kriophobia">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Kriophobia</p>
+                      <div class="overlay">
+                        <button class="btn btn-sm btn-primary">Detalhes</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Controles do carrossel -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselSuspense" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselSuspense" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Próximo</span>
             </button>
           </div>
         </section>
 
+        <!-- Seção RPG -->
         <section id="rpg">
-          <h4>RPG</h4>
-          <div id="carouselRPG" class="carousel slide mb-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/8.png" class="card-img-top game-img-custom" alt="Au Revoir">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Au Revoir</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/9.png" class="card-img-top game-img-custom" alt="FrostFlame">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">FrostFlame</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/15.png" class="card-img-top game-img-custom" alt="Mistic Quest the Lost Kingdom">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Mistic Quest the Lost Kingdom</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/17.png" class="card-img-top game-img-custom" alt="Tormenta 20">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Tormenta 20</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/19.png" class="card-img-top game-img-custom" alt="Enigma do Medo">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Enigma do Medo</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/57.png" class="card-img-top game-img-custom" alt="Old Dragon">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Old Dragon</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center game-card" style="overflow:visible;">
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/28.png" class="card-img-top game-img-custom" alt="Teocida + Estigma">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">Teocida + Estigma</p>
-                    </div>
-                  </div>
-                  <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
-                    <img src="images/44.png" class="card-img-top game-img-custom" alt="RoadOut">
-                    <div class="card-body p-2">
-                      <p class="card-title text-center game-title-custom">RoadOut</p>
-                    </div>
-                  </div>
-                </div>
+  <h4 class="category-title">
+    <i class="fas fa-dragon me-2"></i> RPG
+    <a href="#" class="float-end view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+  </h4>
+  <div id="carouselRPG" class="carousel slide mb-5" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center game-card" style="overflow:visible;">
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/8.png" class="card-img-top game-img-custom" alt="Au Revoir">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Au Revoir</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselRPG" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselRPG" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
           </div>
-        </section>
-      </section>
-    
-      <footer>
-        <div class="footer-content">
-          <p>IARA GAMES &copy; 2025 - Todos os direitos reservados</p>
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/9.png" class="card-img-top game-img-custom" alt="FrostFlame">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">FrostFlame</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/15.png" class="card-img-top game-img-custom" alt="Mistic Quest the Lost Kingdom">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Mistic Quest the Lost Kingdom</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/17.png" class="card-img-top game-img-custom" alt="Tormenta 20">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Tormenta 20</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/19.png" class="card-img-top game-img-custom" alt="Enigma do Medo">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Enigma do Medo</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
-    </main>
+      </div>
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center game-card" style="overflow:visible;">
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/57.png" class="card-img-top game-img-custom" alt="Old Dragon">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Old Dragon</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+                <button class="btn btn-sm btn-success mt-2">Jogar</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/28.png" class="card-img-top game-img-custom" alt="Teocida + Estigma">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">Teocida + Estigma</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+                <button class="btn btn-sm btn-success mt-2">Jogar</button>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-transparent border-0 mx-2" style="width: 180px;">
+            <img src="images/44.png" class="card-img-top game-img-custom" alt="RoadOut">
+            <div class="card-body p-2">
+              <p class="card-title text-center game-title-custom">RoadOut</p>
+              <div class="overlay">
+                <button class="btn btn-sm btn-primary">Detalhes</button>
+                <button class="btn btn-sm btn-success mt-2">Jogar</button>
+              </div>
+            </div>
+          </div>
+     
+        
+        </div>
+      </div>
+    </div>
+    <!-- Controles do carrossel -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselRPG" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselRPG" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Próximo</span>
+    </button>
   </div>
-  <script src="js/menu.js"></script> 
+</section>
+
+
+  </div>
+  </div>
+  </section>
+  </main>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <h5 class="mb-3">IARA GAMES</h5>
+          <p>Sua plataforma de jogos brasileira com os melhores títulos nacionais.</p>
+          <div class="social-icons mt-3">
+            <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white me-3" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2 mb-4 mb-md-0">
+          <h5 class="mb-3">Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Início</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Jogos</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sobre</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contato</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4 mb-md-0">
+          <h5 class="mb-3">Legal</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Termos de Uso</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Política de Privacidade</a></li>
+            <li class="mb-2"><a href="#" class="text-white text-decoration-none">Cookies</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5 class="mb-3">Suporte</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="fas fa-envelope me-2"></i> contato@iaragames.com</li>
+            <li class="mb-2"><i class="fas fa-phone me-2"></i> (11) 1234-5678</li>
+            <li><i class="fas fa-map-marker-alt me-2"></i> São Paulo, Brasil</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="text-center">
+        <p class="mb-0">IARA GAMES &copy; 2025 - Todos os direitos reservados</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <!-- Scripts Customizados -->
+  <script src="js/menu.js"></script>
   <script src="js/scrollCenter.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  <script>
+    // Inicializar tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    // Efeito de hover nos cards
+    document.querySelectorAll('.game-card').forEach(card => {
+      card.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-10px)';
+      });
+      card.addEventListener('mouseleave', function () {
+        this.style.transform = '';
+      });
+    });
+  </script>
 </body>
+
 </html>
