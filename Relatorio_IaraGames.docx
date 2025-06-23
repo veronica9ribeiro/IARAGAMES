@@ -1,0 +1,43 @@
+IARA GAMES - RELATÓRIO DE INTERATIVIDADE
+
+1. Página desenvolvida com interatividade
+
+Página escolhida: Cadastro de Usuário (pages/Cadastro.html)
+
+A página de cadastro permite ao usuário criar uma conta preenchendo um formulário. O JavaScript valida os campos em tempo real, exibindo mensagens de erro caso algum campo obrigatório não seja preenchido ou as senhas não coincidam. Ao preencher corretamente, uma mensagem de sucesso é exibida. O layout utiliza Bootstrap para responsividade e identidade visual da marca.
+
+[INSIRA AQUI O PRINT 1: Tela inicial da página de cadastro (formulário em branco)]
+
+Validação de formulário: O usuário é impedido de enviar o formulário caso algum campo obrigatório esteja vazio, a idade esteja fora do intervalo permitido ou as senhas não coincidam. Mensagens de erro são exibidas dinamicamente abaixo dos campos.
+
+[INSIRA AQUI O PRINT 2: Formulário após tentativa de envio com campos obrigatórios vazios, mostrando mensagens de erro]
+
+Feedback de sucesso: Após o preenchimento correto, uma mensagem de sucesso é exibida ao usuário, confirmando o cadastro.
+
+[INSIRA AQUI O PRINT 3: Formulário preenchido corretamente e mensagem de sucesso]
+
+2. Código JavaScript implementado
+
+O código JavaScript responsável pela validação e feedback dinâmico está no arquivo js/cadastro.js. Ele impede o envio do formulário caso haja erros e exibe mensagens dinâmicas para o usuário.
+
+[INSIRA AQUI O PRINT 4: Trecho do código JS responsável pela validação dos campos]
+
+[INSIRA AQUI O PRINT 5: Trecho do código JS que exibe mensagens dinâmicas de erro/sucesso]
+
+Justificativa: A validação em tempo real melhora a experiência do usuário, evitando envios incorretos e tornando o processo mais intuitivo. O feedback dinâmico reduz frustrações e orienta o usuário durante o cadastro.
+
+3. Plano de fundo visual
+
+Identidade visual: A página segue a identidade visual da Iara Games, utilizando as cores da marca, fontes modernas e o logo. O Bootstrap é utilizado para garantir responsividade, espaçamento adequado e componentes visuais consistentes.
+
+Recursos do Bootstrap utilizados: Grid responsivo, botões estilizados, campos de formulário com bordas arredondadas, espaçamentos e tipografia.
+
+[INSIRA AQUI O PRINT 6: Print do layout geral da página de cadastro, destacando o uso do Bootstrap]
+
+4. Link do repositório no GitHub
+
+[INSIRA AQUI O LINK DO REPOSITÓRIO PÚBLICO DA EQUIPE]
+
+---
+
+Observação: Substitua os espaços de print pelo printscreen correspondente da sua tela e insira o link do repositório da equipe.
