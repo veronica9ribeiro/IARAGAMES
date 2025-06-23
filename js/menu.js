@@ -1,15 +1,16 @@
 // menu.js - Insere dinamicamente o navbar e a barra de busca responsivos em qualquer página
 
 document.addEventListener('DOMContentLoaded', function () {
-  // HTML do navbar responsivo (igual ao index_veronica.html)
+  // HTML do navbar responsivo (igual ao index.html)
   const navbarHTML = `
   <div class="container navbar-container">
     <nav class="navbar navbar-expand-lg bg-body-tertiary mt-0 pt-0">
       <div class="container-fluid d-flex justify-content-between align-items-start mt-0 pt-0">
         <!-- Logo -->
         <div class="navbar-brand d-flex align-items-center mt-0 pt-0">
-          <a href="../index_veronica.html" style="text-decoration: none;">
+          <a href="../index.html" style="text-decoration: none;">
             <h1 class="logo m-0">IARA GAMES</h1>
+            <div class="frase-aventura">Explore mundos épicos e viva aventuras inesquecíveis</div>
           </a>
         </div>
         <!-- Botão sanduíche padrão Bootstrap -->
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 Início
               </a>
               <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="../index_veronica.html">Minha Conta</a></li>
+                <li><a class="dropdown-item" href="../index.html">Minha Conta</a></li>
                 <li><a class="dropdown-item" href="#categorias">Categorias</a></li>
               </ul>
             </li>
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </nav>
   </div>`;
 
-  // HTML da barra de busca (igual ao index_veronica.html)
+  // HTML da barra de busca (igual ao index.html)
   const buscaHTML = `
   <div class="container busca-intermediaria ps-3">
     <form class="search-form" role="search" style="max-width: 400px; margin-left: 0;">

@@ -1,4 +1,4 @@
-/* Reset e Fonte */
+/* ===================== RESET & FONTS ===================== */
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gluten&display=swap');
@@ -11,9 +11,10 @@
 }
 
 html, body {
-  height: 100vh !important;
+  min-height: 100vh;
+  height: auto !important;
   overflow-x: hidden !important;
-  overflow-y: hidden !important;
+  /* Remover overflow-y: hidden para permitir rolagem */
 }
 
 body {
@@ -22,7 +23,6 @@ body {
   background-size: cover;
   background-position: top;
   color: #ccc;
-  /* Removido overflow: hidden para permitir que os cards do carrossel possam crescer para fora do container ao aplicar scale */
 }
 @media (prefers-color-scheme: dark) {
   body {
@@ -43,7 +43,7 @@ a:focus, button:focus, input:focus {
   margin-right: 6px;
 }
 
-/* HEADER */
+/* ===================== HEADER & NAV ===================== */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -263,7 +263,99 @@ header {
   border: 2px solid #00ff88;
 }
 
-/* MAIN */
+/* ===================== CARROSSEL & CARDS ===================== */
+/* Carrossel container */
+.game-card {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: clamp(1rem, 3vw, 3vmin);
+  scroll-behavior: smooth;
+  justify-content: center;
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 transparent;
+  overflow: visible !important;
+}
+.game-card::-webkit-scrollbar {
+  height: 0.8vmin;
+}
+.game-card::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 0.4vmin;
+}
+
+/* Card base (sem borda fixa, sem sombra) */
+.card,
+.categories .carousel-inner .carousel-item .d-flex > .card {
+  background: rgba(0,0,29,0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* ===================== CARD IMAGE ===================== */
+.card img,
+.categories .carousel-inner .carousel-item .d-flex > .card img {
+  border: none !important;
+  border-radius: clamp(0.5rem, 1vw, 1.2vmin) !important;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: clamp(0.7rem, 2vw, 2vmin) 0;
+  box-shadow: none !important;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+  cursor: pointer;
+  object-fit: contain;
+  aspect-ratio: 400/560;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+.card img:hover,
+.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
+  box-shadow: 0 0 20px 4px #00ff88 !important;
+  border: 2px solid #00ff88 !important;
+  z-index: 20 !important;
+  position: relative;
+  transform: scale(1.07);
+}
+
+/* ===================== CARD BODY & TITLES ===================== */
+.card-body,
+.categories .carousel-inner .carousel-item .d-flex > .card .card-body {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 0.2rem 0.7rem 0.2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.game-title-custom,
+.card-title {
+  margin: 0;
+  padding: 0.2em 0 0 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #ccc !important;
+  font-family: 'Gluten', cursive;
+  text-align: center;
+  text-shadow: 0 0 8px #00ff88;
+  border: none !important;
+  background: none !important;
+}
+
+/* ===================== OUTROS AJUSTES ===================== */
+.categories .carousel-inner .carousel-item .d-flex > .card .overlay,
+.game-card .card .overlay {
+  display: none !important;
+}
+
+/* ===================== MAIN ===================== */
 main {
   flex: 1 1 auto;
   height: 65vmin;
@@ -291,116 +383,6 @@ main {
   margin-bottom: clamp(0.7rem, 1.5vw, 2vmin);
   text-shadow: 0 0 clamp(0.3rem, 1vw, 1vmin) #00ff88;
   text-align: start;
-}
-
-/* GAME CARDS */
-.game-card {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: clamp(1rem, 3vw, 3vmin);
-  scroll-behavior: smooth;
-  justify-content: center;
-  scrollbar-width: thin;
-  scrollbar-color: #00ff88 transparent;
-  overflow: visible !important;
-}
-.game-card::-webkit-scrollbar {
-  height: 0.8vmin;
-}
-.game-card::-webkit-scrollbar-thumb {
-  background: #00ff88;
-  border-radius: 0.4vmin;
-}
-.game-card:focus {
-  box-shadow: 0 0 0 3px #00ff88;
-}
-
-/* Adiciona borda verde e efeito de escala nos cards do carrossel */
-.game-card .card,
-.categories .carousel-inner .carousel-item .d-flex > .card {
-  background: rgba(0,0,29,0.8);
-  /* Removido z-index para evitar stacking context desnecessário */
-  position: static;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  border: none !important;
-  box-shadow: none !important;
-  overflow: visible !important; /* Garante que a imagem possa sair do card */
-}
-.game-card .card img,
-.categories .carousel-inner .carousel-item .d-flex > .card img {
-  border: 2px solid #00ff88;
-  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
-  width: 100%;
-  max-width: 160px;
-  height: auto;
-  margin: 0;
-  box-shadow: 0 0 10px 0 #00ff88 !important;
-  transition: transform 0.3s cubic-bezier(.4,2,.6,1), box-shadow 0.3s, border-color 0.3s, z-index 0.3s;
-  cursor: pointer;
-  object-fit: contain;
-  aspect-ratio: 400/560;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-.game-card .card img:hover,
-.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
-  transform: scale(1.2) !important;
-  border-color: #00ff88 !important;
-  z-index: 20 !important;
-  position: relative;
-  box-shadow: 0 0 20px 4px #00ff88 !important;
-}
-
-.game-card img,
-.categories .carousel-inner .carousel-item .d-flex > .card img {
-  border-radius: clamp(0.5rem, 1vw, 1.2vmin);
-  width: 100%; /* Preenche toda a largura do card */
-  max-width: 160px; /* Limita o tamanho para não estourar o card */
-  height: auto;
-  margin: clamp(0.7rem, 2vw, 2vmin) 0;
-  box-shadow: 0 0 clamp(0.5rem, 1.5vw, 1.5vmin) #00ff8866;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  object-fit: contain;
-  aspect-ratio: 400/560;
-  display: block;
-}
-.game-card img:hover,
-.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 clamp(1rem, 2vw, 2.5vmin) #00ff88;
-}
-
-.game-card .card-body,
-.categories .carousel-inner .carousel-item .d-flex > .card .card-body {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0.5rem 0.2rem 0.7rem 0.2rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.game-title-custom {
-  margin: 0;
-  padding: 0.2em 0 0 0;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  color: #ccc !important;
-  font-family: 'Gluten', cursive;
-  text-align: center;
-  text-shadow: 0 0 8px #00ff88;
-  border: none !important;
-  background: none !important;
-}
-.card-title {
-  border: none !important;
-  background: none !important;
 }
 
 /* FOOTER */
@@ -658,18 +640,6 @@ p {
   border-color: #00ff88 !important;
 }
 
-/* Títulos dos cards do carrossel */
-.card .card-title,
-.card .card-body .card-title,
-.card .game-title-custom {
-  color: #ccc !important;
-  font-family: 'Gluten', cursive;
-  text-align: center;
-  text-shadow: 0 0 8px #00ff88;
-  border: none !important;
-  background: none !important;
-}
-
 /* Ajusta altura do container da navbar para ocupar menos espaço vertical */
 .container.navbar-container {
   min-height: 15vh !important;
@@ -723,7 +693,9 @@ p {
 }
 
 .container.categorias-container {
-  min-height: 50vh !important;
+  /* Altura dinâmica: 100vh menos navbar, busca e footer */
+  min-height: 100vh;
+  height: auto;
   max-height: none;
   overflow-y: visible;
   padding-top: 1.5rem;
@@ -733,31 +705,13 @@ p {
   justify-content: flex-start;
   position: relative;
   z-index: 1;
+  background: transparent;
 }
 @media (max-width: 768px) {
   .container.categorias-container {
-    min-height: 70vh !important;
+    min-height: 100vh;
+    height: auto;
     max-height: none;
-  }
-}
-
-.container.categorias-container {
-  /* Altura dinâmica: 100vh menos navbar, busca e footer */
-  height: calc(100vh - 15vh - 20vh - 10vh);
-  min-height: 0;
-  max-height: none;
-  overflow-y: auto;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  .container.categorias-container {
-    height: calc(100vh - 12vh - 18vh - 12vh);
   }
 }
 
@@ -769,4 +723,72 @@ p {
 .categories .carousel-inner .carousel-item,
 .categories .carousel-inner .carousel-item .d-flex {
   overflow: visible !important;
+}
+
+/* Remove overlay e botão Detalhes de todos os cards exceto aventura */
+.categories .carousel-inner .carousel-item .d-flex > .card .overlay,
+.game-card .card .overlay {
+  display: none !important;
+}
+
+.frase-aventura {
+  font-size: clamp(1.2rem, 2.5vw, 3.7min);
+  color: inherit;
+  margin-top: clamp(0.2rem, 1vw, 1.5vmin);
+  margin-bottom: clamp(0.7rem, 1.5vw, 2vmin);
+  text-shadow: 0 0 clamp(0.3rem, 1vw, 1vmin) #00ff88;
+  text-align: start;
+  font-family: 'Patrick Hand SC', cursive;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.category-title {
+  font-size: clamp(1.2rem, 2.5vw, 3.7vmin);
+  color: inherit;
+  margin-top: clamp(1rem, 2vw, 3vmin);
+  margin-bottom: clamp(0.7rem, 1.5vw, 2vmin);
+  text-shadow: 0 0 clamp(0.3rem, 1vw, 1vmin) #00ff88;
+  text-align: start;
+  font-family: 'Patrick Hand SC', cursive;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Força o contorno, fundo e sombra dos cards de todas as categorias igual ao padrão de aventura/multiplayer */
+.card.bg-transparent.border-0.mx-2.game-card,
+.categories .carousel-inner .carousel-item .d-flex > .card,
+.card.bg-transparent.border-0.mx-2 {
+  border: none !important;
+  box-shadow: none !important;
+}
+.card.bg-transparent.border-0.mx-2.game-card img,
+.categories .carousel-inner .carousel-item .d-flex > .card img,
+.card.bg-transparent.border-0.mx-2 img {
+  border: 2px solid #00ff88 !important;
+  border-radius: clamp(0.5rem, 1vw, 1.2vmin) !important;
+  box-shadow: 0 0 10px 0 #00ff88 !important;
+}
+
+/* Corrige: remove borda fixa de todas as imagens dos cards, deixa só o efeito fluorescente (glow) ao passar o mouse */
+.card img,
+.card.bg-transparent img,
+.card.bg-transparent.border-0 img,
+.card.bg-transparent.border-0.mx-2 img,
+.categories .carousel-inner .carousel-item .d-flex > .card img {
+  border: none !important;
+  border-radius: clamp(0.5rem, 1vw, 1.2vmin) !important;
+  box-shadow: none !important;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+}
+.card img:hover,
+.card.bg-transparent img:hover,
+.card.bg-transparent.border-0 img:hover,
+.card.bg-transparent.border-0.mx-2 img:hover,
+.categories .carousel-inner .carousel-item .d-flex > .card img:hover {
+  box-shadow: 0 0 20px 4px #00ff88 !important;
+  border: 2px solid #00ff88 !important;
+  z-index: 20 !important;
+  position: relative;
+  transform: scale(1.07);
 }
