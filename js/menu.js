@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         <!-- Botão sanduíche padrão Bootstrap -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          aria-controls="navbarSupportedContent" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Menu, busca e botões -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#inicio" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#inicio" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                 Início
               </a>
               <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
@@ -46,10 +46,8 @@ document.addEventListener('DOMContentLoaded', function () {
         class="form-control"
         type="search"
         placeholder="Pesquise o seu jogo aqui"
-        aria-label="Pesquisar"
-        style="background-color: rgba(0,0,29,0.8); color: #ccc; border: none; font-family: 'Gluten', cursive;"
       />
-      <button class="btn" type="submit" aria-label="Pesquisar" style="color: #00ff88;">
+      <button class="btn" type="submit" style="color: #00ff88;">
         <i class="fas fa-search"></i>
       </button>
     </form>

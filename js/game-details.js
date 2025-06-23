@@ -749,7 +749,7 @@ function loadGameData() {
         const img = document.createElement('img');
         img.src = image;
         img.className = 'd-block w-100';
-        img.alt = game.title;
+        img.alt = `Capa do jogo ${game.title}`;
         
         item.appendChild(img);
         carouselInner.appendChild(item);

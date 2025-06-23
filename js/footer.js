@@ -8,10 +8,10 @@
           <h5 class="mb-3">IARA GAMES</h5>
           <p>Sua plataforma de jogos brasileira com os melhores títulos nacionais.</p>
           <div class="social-icons mt-3">
-            <a href="#" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
-            <a href="#" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
-            <a href="#" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" class="text-white me-3" aria-label="YouTube"><i class="fab fa-youtube fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-youtube fa-lg"></i></a>
           </div>
         </div>
         <div class="col-md-2 mb-4 mb-md-0">
