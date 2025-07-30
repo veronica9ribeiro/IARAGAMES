@@ -5,119 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iara Games - Cadastro</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/cadastro.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
   <!-- Container principal igual ao index -->
-  <div class="container categorias-container">
-    <main>
-      <section class="cadastro-section">
-        <h2>Crie sua conta</h2>
-        <form id="cadastroForm" class="cadastro-form">
-          <div class="row g-3">
-            <div class="col-md-4">
-              <div class="mb-3">
-                <label for="nome" class="form-label">Nome completo</label>
-                <input type="text" class="form-control" id="nome" name="nome" required />
-              </div>
-              <div class="mb-3">
-                <label for="idade" class="form-label">Idade</label>
-                <input type="number" class="form-control" id="idade" name="idade" min="10" max="120" required />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" name="email" required />
-              </div>
-              <div class="mb-3">
-                <label for="usuario" class="form-label">Nome de usuário</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" required />
-              </div>
-              <div class="mb-3">
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="senha" name="senha" required minlength="6" />
-              </div>
-              <div class="mb-3">
-                <label for="confirmarSenha" class="form-label">Confirmar senha</label>
-                <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" required minlength="6" />
-              </div>
-            </div>
-            <div class="col-md-4">
-              <fieldset class="preferencias-cadastro mb-3">
-                <legend>Plataformas favoritas</legend>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="plataformas" value="PC" id="plataformaPC" />
-                  <label class="form-check-label" for="plataformaPC">PC</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="plataformas" value="PlayStation" id="plataformaPlayStation" />
-                  <label class="form-check-label" for="plataformaPlayStation">PlayStation</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="plataformas" value="Xbox" id="plataformaXbox" />
-                  <label class="form-check-label" for="plataformaXbox">Xbox</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="plataformas" value="Nintendo" id="plataformaNintendo" />
-                  <label class="form-check-label" for="plataformaNintendo">Nintendo</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="plataformas" value="Mobile" id="plataformaMobile" />
-                  <label class="form-check-label" for="plataformaMobile">Mobile</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="plataformas" value="Outro" id="plataformaOutro" />
-                  <label class="form-check-label" for="plataformaOutro">Outro</label>
-                </div>
-              </fieldset>
-            </div>
-            <div class="col-md-4">
-              <fieldset class="preferencias-cadastro mb-3">
-                <legend>Categorias favoritas</legend>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="Aventura" id="catAventura" />
-                  <label class="form-check-label" for="catAventura">Aventura</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="Terror" id="catTerror" />
-                  <label class="form-check-label" for="catTerror">Terror</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="RPG" id="catRPG" />
-                  <label class="form-check-label" for="catRPG">RPG</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="Esporte" id="catEsporte" />
-                  <label class="form-check-label" for="catEsporte">Esporte</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="Corrida" id="catCorrida" />
-                  <label class="form-check-label" for="catCorrida">Corrida</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="Estratégia" id="catEstrategia" />
-                  <label class="form-check-label" for="catEstrategia">Estratégia</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="categorias" value="Simulação" id="catSimulacao" />
-                  <label class="form-check-label" for="catSimulacao">Simulação</label>
-                </div>
-              </fieldset>
-            </div>
-          </div>
-          <div class="row mt-4">
-            <div class="col-12 text-center">
-              <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
-            </div>
-          </div>
-        </form>
-        <div id="cadastroMensagem"></div>
-      </section>
-    </main>
-  </div>
+  <form class="formulario-cadastro" action="/cadastro" method="post">
+  <h2>Crie sua conta</h2>
+
+  <label for="nome">Nome completo</label>
+  <input type="text" id="nome" name="nome" required />
+
+  <label for="idade">Idade</label>
+  <input type="number" id="idade" name="idade" required />
+
+  <label for="email">E-mail</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="usuario">Nome de usuário</label>
+  <input type="text" id="usuario" name="usuario" required />
+
+  <label for="senha">Senha</label>
+  <input type="password" id="senha" name="senha" required />
+
+  <label for="confirmar">Confirmar senha</label>
+  <input type="password" id="confirmar" name="confirmar" required />
+
+  <fieldset>
+    <legend>Plataformas Utilizadas</legend>
+    <label><input type="checkbox" name="plataforma" value="PC" /> PC</label>
+    <label><input type="checkbox" name="plataforma" value="PlayStation" /> PlayStation</label>
+    <label><input type="checkbox" name="plataforma" value="Xbox" /> Xbox</label>
+    <label><input type="checkbox" name="plataforma" value="Nintendo" /> Nintendo</label>
+    <label><input type="checkbox" name="plataforma" value="Mobile" /> Mobile</label>
+    <label><input type="checkbox" name="plataforma" value="Outro" /> Outro</label>
+  </fieldset>
+
+<form id="formCadastro" class="formulario-cadastro">
+  <!-- Seus campos de cadastro aqui -->
+  <button type="submit" id="btnCadastrar">Cadastrar</button>
+</form>
+
+  <p class="texto-rodape">
+    Já tem uma conta? <a href="../pages/Login.html">Faça login</a>
+  </p>
+ 
+</form>
+
   <!-- Footer será inserido dinamicamente por JS -->
   <script src="../js/footer.js"></script>
-  <script src="../js/menu.js"></script>
   <script src="../js/cadastro.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
