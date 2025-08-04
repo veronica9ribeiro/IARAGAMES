@@ -1,5 +1,3 @@
-// menu.js - Insere dinamicamente o navbar e a barra de busca responsivos em qualquer página
-
 document.addEventListener('DOMContentLoaded', function () {
   // HTML do navbar responsivo (igual ao index.html)
   const navbarHTML = `
@@ -23,16 +21,38 @@ document.addEventListener('DOMContentLoaded', function () {
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#inicio" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                Início
+                Perfil
               </a>
               <ul class="dropdown-menu custom-dropdown" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="../index.html">Minha Conta</a></li>
-                <li><a class="dropdown-item" href="#categorias">Categorias</a></li>
+                <li><a class="dropdown-item" href="#biblioteca">Biblioteca</a></li>
+                <li><a class="dropdown-item" href="#amigos">Amigos</a></li>
+                   <li><a class="dropdown-item" href="#inventario">Inventário</a></li>
               </ul>
             </li>
           </ul>
           <button class="navbar-btn" onclick="location.href='../pages/Cadastro.html'">Cadastre-se</button>
-          <button class="navbar-btn" onclick="location.href='#login'">Entre</button>
+          <button class="navbar-btn" onclick="location.href='../pages/Entrar.html'">
+            <i class="fas fa-user me-2"></i> Entre
+          </button>
+          <!-- Adicione ao seu navbar -->
+          <div class="dropdown d-inline-block">
+            <a href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="profile-circle">
+                <span class="profile-head"></span>
+                <span class="profile-body"></span>
+              </span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" href="../pages/Perfil.html">Meu perfil</a></li>
+              <li><a class="dropdown-item" href="#">Detalhes da conta</a></li>
+              <li><a class="dropdown-item" href="#">Preferências da loja</a></li>
+              <li><a class="dropdown-item" href="#">Ver a minha Carteira</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Trocar conta...</a></li>
+              <li><a class="dropdown-item" href="#">Finalizar sessão...</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

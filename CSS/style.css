@@ -792,3 +792,187 @@ p {
   position: relative;
   transform: scale(1.07);
 }
+
+
+.profile-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 3px solid #00ff88;
+  border-radius: 50%;
+  position: relative;
+  vertical-align: middle;
+
+}
+
+.profile-head {
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  width: 14px;
+  height: 13px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.profile-body {
+  position: absolute;
+  bottom: 4px;
+  left: 7px;
+  width: 18px;
+  height: 10px;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+}
+
+.navbar .navbar-collapse {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2.5rem; /* aumenta o espaço entre os itens */
+}
+
+.navbar .navbar-btn {
+  margin-left: 0.8rem;
+  margin-right: 0.8rem;
+}
+
+.profile-circle {
+  margin-left: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.container.navbar-container {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* ===================== SIDEBAR ===================== */
+/* Sidebar personalizada para IARA GAMES */
+.sidebar-menu {
+  position: fixed;
+  top: 80px; /* ajuste conforme sua navbar */
+  left: 0;
+  width: 260px;
+  background: linear-gradient(180deg, rgba(0,10,25,0.98) 80%, rgba(0,255,136,0.08) 100%);
+  color: #b8ffe0;
+  padding: 32px 22px 22px 32px;
+  height: calc(100vh - 80px);
+  z-index: 1000;
+  box-shadow: 2px 0 24px 0 #00ff88a0;
+  border-right: 2px solid #00ff88;
+  font-family: 'Patrick Hand SC', cursive;
+  backdrop-filter: blur(2px);
+}
+
+.sidebar-menu h4 {
+  font-size: 1.3em;
+  margin-bottom: 22px;
+  color: #00ff88;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 8px #00ff88;
+  font-family: 'Protest Guerrilla', cursive;
+}
+
+.sidebar-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu ul li {
+  margin-bottom: 16px;
+}
+
+.sidebar-menu ul li a {
+  color: #b8ffe0;
+  text-decoration: none;
+  font-size: 1.08em;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 
+    color 0.2s,
+    background 0.2s,
+    box-shadow 0.2s;
+  font-family: 'Patrick Hand SC', cursive;
+  display: block;
+}
+
+.sidebar-menu ul li a:hover,
+.sidebar-menu ul li a:focus {
+  color: #00010D;
+  background: #00ff88;
+  box-shadow: 0 0 12px #00ff88;
+  text-decoration: none;
+  font-weight: bold;
+  outline: none;
+}
+
+/* Responsivo: esconde menu lateral em telas pequenas */
+@media (max-width: 900px) {
+  .sidebar-menu {
+    position: static;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-right: none;
+    padding: 18px 10px;
+    margin-bottom: 18px;
+  }
+}
+
+/* Dropdown customizado do perfil */
+.profile-dropdown-menu,
+.dropdown-menu[aria-labelledby="profileDropdown"] {
+  background: rgba(0,10,25,0.98) !important;
+  border: 2px solid #00ff88 !important;
+  box-shadow: 0 0 18px 0 #00ff88a0;
+  border-radius: 12px;
+  font-family: 'Patrick Hand SC', cursive;
+  color: #b8ffe0 !important;
+  min-width: 220px;
+  padding: 12px 0;
+  z-index: 1200;
+}
+
+.profile-dropdown-menu .dropdown-item,
+.dropdown-menu[aria-labelledby="profileDropdown"] .dropdown-item {
+  color: #b8ffe0 !important;
+  background: transparent !important;
+  font-size: 1.08em;
+  padding: 10px 22px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  font-family: 'Patrick Hand SC', cursive;
+  letter-spacing: 1px;
+}
+
+.profile-dropdown-menu .dropdown-item:hover,
+.profile-dropdown-menu .dropdown-item:focus,
+.dropdown-menu[aria-labelledby="profileDropdown"] .dropdown-item:hover,
+.dropdown-menu[aria-labelledby="profileDropdown"] .dropdown-item:focus {
+  background: #00ff88 !important;
+  color: #00010D !important;
+  font-weight: bold;
+  box-shadow: 0 0 12px #00ff88;
+  outline: none;
+}
+
+.profile-dropdown-menu .dropdown-divider,
+.dropdown-menu[aria-labelledby="profileDropdown"] .dropdown-divider {
+  border-top: 1.5px solid #00ff88;
+  margin: 8px 0;
+}
+
+/* Remove seta do dropdown Bootstrap */
+.profile-dropdown-menu::before,
+.dropdown-menu[aria-labelledby="profileDropdown"]::before {
+  display: none !important;
+}
+
+/* Ajusta o espaçamento do menu em relação ao ícone */
+.profile-dropdown-menu,
+.dropdown-menu[aria-labelledby="profileDropdown"] {
+  margin-top: 12px !important;
+}

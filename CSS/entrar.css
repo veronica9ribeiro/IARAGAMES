@@ -4,8 +4,14 @@ body {
   background: url(/images/background.cadastro.png) no-repeat center center/cover;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+footer {
+  margin-top: auto;
+}
 
 .formulario-cadastro header {
   display: none;
@@ -14,7 +20,7 @@ body {
 .formulario-cadastro {
   background-color: rgba(0, 0, 0, 0.7); /* fundo escuro transparente */
   max-width: 600px;
-  margin: 50px auto;
+  margin: 70px auto;
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 0 20px #000;
@@ -29,7 +35,7 @@ body {
 
 label {
   display: block;
-  margin-top: 15px;
+  margin-top: 19px;
   font-weight: bold;
 }
 
@@ -38,12 +44,14 @@ input[type="email"],
 input[type="number"],
 input[type="password"] {
   width: 100%;
-  padding: 10px;
-  margin-top: 5px;
+  padding: 20px;      /* aumenta o espaço interno */
+  height: 55px;       /* aumenta a altura da caixa */
+  margin-top: 30px;
   border: none;
   border-radius: 5px;
   background-color: #08482f39;
   color: #ffffff;
+  font-size: 1.3em;   /* aumenta o tamanho da fonte */
 }
 
 fieldset {
@@ -72,4 +80,20 @@ button[type="submit"] {
 
 button:hover {
   background-color: #99b60897;
+}
+
+.formulario-entrar {
+  background-color: rgba(0, 0, 0, 0.7);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #000;
+}
+
+.formulario-entrar h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff;
 }
