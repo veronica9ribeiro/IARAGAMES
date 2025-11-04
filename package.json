@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "iaragames",
   "version": "1.0.0",
   "type": "module",
@@ -16,23 +16,4 @@
     "@vitejs/plugin-react": "^4.1.0",
     "vite": "^4.4.5"
   }
-}
-
-{
-  "version": 2,
-  "builds": [
-    {
-      "src": "vite.config.js",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/$1"
-    }
-  ]
 }
