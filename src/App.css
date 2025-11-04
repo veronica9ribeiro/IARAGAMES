@@ -1,15 +1,55 @@
-﻿/* Estilos globais adicionais */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
+﻿@"
+.app {
+  min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Garantir que o layout ocupe toda a altura */
-#root {
-  min-height: 100vh;
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 1rem 2rem;
 }
+
+.header h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.nav button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.nav button.active,
+.nav button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main h2 {
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.main p {
+  color: #718096;
+  line-height: 1.6;
+}
+"@ | Out-File -FilePath "src/App.css" -Encoding UTF8 -Force

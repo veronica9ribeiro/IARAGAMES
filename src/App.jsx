@@ -1,4 +1,5 @@
 ﻿import React, { useState } from 'react'
+import CepSearch from './components/cep/CepSearch'
 import './App.css'
 
 function App() {
@@ -29,14 +30,22 @@ function App() {
           <div>
             <h2>Jogos em Destaque</h2>
             <p>Bem-vindo a plataforma IARA GAMES!</p>
+            <div style={{marginTop: '2rem'}}>
+              <h3>Em breve:</h3>
+              <ul>
+                <li>Jogo da Memoria</li>
+                <li>Quebra-cabeca</li>
+                <li>Jogo da Velha</li>
+              </ul>
+            </div>
           </div>
         )}
         
         {currentPage === 'cep' && (
           <div>
             <h2>Consulta de CEP</h2>
-            <p>Digite um CEP para buscar o endereco.</p>
-            {/* Componente CepSearch sera adicionado aqui */}
+            <p>Encontre enderecos de forma rapida e facil</p>
+            <CepSearch />
           </div>
         )}
       </main>
