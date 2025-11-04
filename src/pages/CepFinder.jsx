@@ -7,7 +7,7 @@ const CepFinder = () => {
     <div className="cep-finder">
       <div className="container">
         <section className="cep-hero">
-          <h2>🔍 Consulta de CEP</h2>
+          <h2> Consulta de CEP</h2>
           <p>Encontre endereços de forma rápida enquanto espera seus jogos carregarem</p>
         </section>
         

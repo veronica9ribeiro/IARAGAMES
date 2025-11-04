@@ -7,19 +7,19 @@ const Games = () => {
       id: 1,
       name: "Jogo da Memória",
       description: "Teste sua memória com este jogo clássico",
-      emoji: "🧠"
+      
     },
     {
       id: 2,
       name: "Quebra-Cabeça",
       description: "Monte peças para formar imagens incríveis",
-      emoji: "🧩"
+   
     },
     {
       id: 3,
       name: "Jogo da Velha",
       description: "Desafie seus amigos neste jogo estratégico",
-      emoji: "⭕"
+ 
     }
   ]
 
@@ -53,15 +53,15 @@ const Games = () => {
           <h3>Funcionalidades Rápidas</h3>
           <div className="actions-grid">
             <div className="action-card">
-              <h4>🎮 Jogos</h4>
+              <h4> Jogos</h4>
               <p>Acesse nossa coleção completa de jogos</p>
             </div>
             <div className="action-card">
-              <h4>🔍 Consulta CEP</h4>
+              <h4> Consulta CEP</h4>
               <p>Encontre endereços rapidamente</p>
             </div>
             <div className="action-card">
-              <h4>📊 Ranking</h4>
+              <h4> Ranking</h4>
               <p>Veja os melhores jogadores</p>
             </div>
           </div>
